@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>hexo主题介绍</title>
+      <link href="/2021/11/28/blogSet/"/>
+      <url>/2021/11/28/blogSet/</url>
+      
+        <content type="html"><![CDATA[<pre class=" language-js"><code class="language-js"><span class="token operator">--</span><span class="token operator">-</span>title<span class="token punctuation">:</span> typora<span class="token operator">-</span>vue<span class="token operator">-</span>theme主题介绍date<span class="token punctuation">:</span> <span class="token number">2018</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">07</span> <span class="token number">09</span><span class="token punctuation">:</span><span class="token number">25</span><span class="token punctuation">:</span><span class="token number">00</span>author<span class="token punctuation">:</span> jackliuimg<span class="token punctuation">:</span> <span class="token operator">/</span>source<span class="token operator">/</span>images<span class="token operator">/</span>xxx<span class="token punctuation">.</span>jpgtop<span class="token punctuation">:</span> <span class="token boolean">true</span>cover<span class="token punctuation">:</span> <span class="token boolean">true</span>coverImg<span class="token punctuation">:</span> <span class="token operator">/</span>images<span class="token operator">/</span><span class="token number">1</span><span class="token punctuation">.</span>jpgpassword<span class="token punctuation">:</span> 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92toc<span class="token punctuation">:</span> <span class="token boolean">false</span>mathjax<span class="token punctuation">:</span> <span class="token boolean">false</span>summary<span class="token punctuation">:</span> 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要categories<span class="token punctuation">:</span> Markdowntags<span class="token punctuation">:</span>  <span class="token operator">-</span> Typora  <span class="token operator">-</span> Markdown<span class="token operator">--</span><span class="token operator">-</span></code></pre><p><img src="/2021/11/28/blogSet/1.png"></p><p><img src="/2021/11/28/blogSet/2.png"></p><p><img src="/2021/11/28/blogSet/3.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Blog </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
