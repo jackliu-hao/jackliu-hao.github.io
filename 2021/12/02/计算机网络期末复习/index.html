@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    3.1k
                 </div>
                 
 
@@ -630,6 +630,74 @@
 <p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211203220910888.png" alt="image-20211203220910888"></p>
 <h3 id="定义-amp-记忆"><a href="#定义-amp-记忆" class="headerlink" title="定义&amp;记忆"></a>定义&amp;记忆</h3><p>1、在采用曼彻斯特编码的情况下编码前和编码后的比特率相差两倍。在曼彻斯特编码的时候，由于曼彻斯特编码，在一个周期内要发送两次脉冲，也就是比要发送的数据多出一倍，因此需要的带宽是原始基带的两倍。</p>
 <p>2、波特率等于每秒钟可能发生的信号变化的次数。</p>
+<h1 id="第三章：数据链路层"><a href="#第三章：数据链路层" class="headerlink" title="第三章：数据链路层"></a>第三章：数据链路层</h1><h2 id="数据链路层导图"><a href="#数据链路层导图" class="headerlink" title="数据链路层导图"></a>数据链路层导图</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204160843787.png" alt="image-20211204160843787"></p>
+<h2 id="数据链路层的基本概念"><a href="#数据链路层的基本概念" class="headerlink" title="数据链路层的基本概念"></a>数据链路层的基本概念</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204160951111.png" alt="image-20211204160951111"></p>
+<h2 id="数据链路层功能"><a href="#数据链路层功能" class="headerlink" title="数据链路层功能"></a>数据链路层功能</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204161034772.png" alt="image-20211204161034772"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204161047041.png" alt="image-20211204161047041"></p>
+<h2 id="数据链路层面临的问题"><a href="#数据链路层面临的问题" class="headerlink" title="数据链路层面临的问题"></a>数据链路层面临的问题</h2><p>1、封装成帧</p>
+<p>2、透明传输</p>
+<p>3、差错检测</p>
+<h2 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204161218546.png" alt="image-20211204161218546"></p>
+<p>首先需要说明的是封装成帧是发送的时候做的，这也是为什么在其他层都是只增加首部，到数据链路层增加了首部和尾部。因为为了使接收方能够在收到信息后知道数据部分，就要有数据的开始和结束，因此也就有了不同的定界符。 </p>
+<p>同时，从这里可以看出，数据链路层对bit数据进行处理，不需要关心数字信号模拟信号的转换，而网络层则不需要关心bit数据，直接处理由链路层处理好的数据就行了。这里也能看出分层的好处，可谓各司其职但是又相辅相成。</p>
+<h2 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204161922169.png" alt="image-20211204161922169"></p>
+<h2 id="封装成帧的几种方法"><a href="#封装成帧的几种方法" class="headerlink" title="封装成帧的几种方法"></a>封装成帧的几种方法</h2><h3 id="1、字符统计法"><a href="#1、字符统计法" class="headerlink" title="1、字符统计法"></a>1、字符统计法</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162228240.png" alt="image-20211204162228240"></p>
+<h3 id="2、字符填充法"><a href="#2、字符填充法" class="headerlink" title="2、字符填充法"></a>2、字符填充法</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162256089.png" alt="image-20211204162256089"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162311360.png" alt="image-20211204162311360"></p>
+<h3 id="3、零比特填充法"><a href="#3、零比特填充法" class="headerlink" title="3、零比特填充法"></a>3、零比特填充法</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162340007.png" alt="image-20211204162340007"></p>
+<h3 id="4、违规编码法"><a href="#4、违规编码法" class="headerlink" title="4、违规编码法"></a>4、违规编码法</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162431212.png" alt="image-20211204162431212"></p>
+<p>目前最常使用的是零比特填充法和违规编码法</p>
+<h2 id="差错控制"><a href="#差错控制" class="headerlink" title="差错控制"></a>差错控制</h2><h3 id="差错从何而来"><a href="#差错从何而来" class="headerlink" title="差错从何而来"></a>差错从何而来</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162856431.png" alt="image-20211204162856431"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162945064.png" alt="image-20211204162945064"></p>
+<h3 id="差错检验：奇偶校验码"><a href="#差错检验：奇偶校验码" class="headerlink" title="差错检验：奇偶校验码"></a>差错检验：奇偶校验码</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204163543389.png" alt="image-20211204163543389"></p>
+<h3 id="差错检测：CRC循环冗余码"><a href="#差错检测：CRC循环冗余码" class="headerlink" title="差错检测：CRC循环冗余码**"></a>差错检测：CRC循环冗余码**</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204163714935.png" alt="image-20211204163714935"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204163725569.png" alt="image-20211204163725569"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204163742132.png" alt="image-20211204163742132"></p>
+<h3 id="纠错编码：海明码"><a href="#纠错编码：海明码" class="headerlink" title="纠错编码：海明码"></a>纠错编码：海明码</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204163830279.png" alt="image-20211204163830279"></p>
+<h4 id="海明距离"><a href="#海明距离" class="headerlink" title="海明距离"></a>海明距离</h4><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204163904693.png" alt="image-20211204163904693"></p>
+<p>当海明距离（码距）为1时，无法检错。</p>
+<p>若海明码需要检测d位错误，则需要的码距是d+1</p>
+<p>若海明码需要纠错d位错误，则需要的码距是2*d + 1</p>
+<h4 id="1、确定校验码位数r"><a href="#1、确定校验码位数r" class="headerlink" title="1、确定校验码位数r"></a>1、确定校验码位数r</h4><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204164434866.png" alt="image-20211204164434866"></p>
+<h4 id="2、确定校验码的位置"><a href="#2、确定校验码的位置" class="headerlink" title="2、确定校验码的位置"></a>2、确定校验码的位置</h4><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204164457149.png" alt="image-20211204164457149"></p>
+<h4 id="3、求出校验码的值"><a href="#3、求出校验码的值" class="headerlink" title="3、求出校验码的值"></a>3、求出校验码的值</h4><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204164515773.png" alt="image-20211204164515773"></p>
+<h3 id="4、检错-amp-纠错"><a href="#4、检错-amp-纠错" class="headerlink" title="4、检错&amp;纠错"></a>4、检错&amp;纠错</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204164536481.png" alt="image-20211204164536481"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204164548235.png" alt="image-20211204164548235"></p>
+<h2 id="差错控制的总结"><a href="#差错控制的总结" class="headerlink" title="差错控制的总结"></a>差错控制的总结</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204164609765.png" alt="image-20211204164609765"></p>
+<p>差错控制并不是实现可靠传输。</p>
+<p>可靠传输是指： 发送端发送什么，接收端就接受什么。如果发送的数据丢失或者错误，则需要保证发送端能够重新发送数据。</p>
+<p>而且差错控制是在bit数据层面，可靠传输是在帧的层面。</p>
+<h2 id="流量控制"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204212532249.png" alt="image-20211204212532249"></p>
+<p>在学习运输层的时候，我们也会学习流量控制。</p>
+<p>数据链路层的流量控制是点对点的，而传输层的流量控制是端到端的。</p>
+<h3 id="流量控制的方法"><a href="#流量控制的方法" class="headerlink" title="流量控制的方法"></a>流量控制的方法</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204212718810.png" alt="image-20211204212718810"></p>
+<h3 id="可靠传输、滑动窗口、流量控制"><a href="#可靠传输、滑动窗口、流量控制" class="headerlink" title="可靠传输、滑动窗口、流量控制"></a>可靠传输、滑动窗口、流量控制</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204212814218.png" alt="image-20211204212814218"></p>
+<h2 id="停止-等待协议"><a href="#停止-等待协议" class="headerlink" title="停止-等待协议"></a>停止-等待协议</h2><h3 id="停等协议属于哪一层？"><a href="#停等协议属于哪一层？" class="headerlink" title="停等协议属于哪一层？"></a>停等协议属于哪一层？</h3><p>在传输介质不发达的时间，由于在数据传输的时候容易发送丢包，等错误，因此把停等协议划分到数据链路层。</p>
+<p>但是现在的传输介质已经很可靠了，因此为了提高传输速度，把停等协议划分到传输层了。</p>
+<h3 id="停等协议解决的一些问题"><a href="#停等协议解决的一些问题" class="headerlink" title="停等协议解决的一些问题"></a>停等协议解决的一些问题</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213207723.png" alt="image-20211204213207723"></p>
+<h3 id="无差错的情况"><a href="#无差错的情况" class="headerlink" title="无差错的情况"></a>无差错的情况</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213246796.png" alt="image-20211204213246796"></p>
+<h3 id="有差错情况-–-数据帧丢失"><a href="#有差错情况-–-数据帧丢失" class="headerlink" title="有差错情况 – 数据帧丢失"></a>有差错情况 – 数据帧丢失</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213420625.png" alt="image-20211204213420625"></p>
+<h3 id="有差错情况-–-ACK丢失"><a href="#有差错情况-–-ACK丢失" class="headerlink" title="有差错情况 – ACK丢失"></a>有差错情况 – ACK丢失</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213503406.png" alt="image-20211204213503406"></p>
+<h3 id="有差错情况-–-ACK迟到"><a href="#有差错情况-–-ACK迟到" class="headerlink" title="有差错情况 – ACK迟到"></a>有差错情况 – ACK迟到</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213647841.png" alt="image-20211204213647841"></p>
+<h3 id="停等协议性能分析"><a href="#停等协议性能分析" class="headerlink" title="停等协议性能分析"></a>停等协议性能分析</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213708930.png" alt="image-20211204213708930"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213735406.png" alt="image-20211204213735406"></p>
+<h2 id="后退N帧协议GBN"><a href="#后退N帧协议GBN" class="headerlink" title="后退N帧协议GBN"></a>后退N帧协议GBN</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213852439.png" alt="image-20211204213852439"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213901176.png" alt="image-20211204213901176"></p>
+<h3 id="GBN发送方做的事"><a href="#GBN发送方做的事" class="headerlink" title="GBN发送方做的事"></a>GBN发送方做的事</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204213935827.png" alt="image-20211204213935827"></p>
+<h3 id="GBN接收方做的事"><a href="#GBN接收方做的事" class="headerlink" title="GBN接收方做的事"></a>GBN接收方做的事</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204214003035.png" alt="image-20211204214003035"></p>
+<h3 id="运行中GBN"><a href="#运行中GBN" class="headerlink" title="运行中GBN**"></a>运行中GBN**</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204214210010.png" alt="image-20211204214210010"></p>
+<h3 id="GBN滑动窗口的大小"><a href="#GBN滑动窗口的大小" class="headerlink" title="GBN滑动窗口的大小"></a>GBN滑动窗口的大小</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204215211156.png" alt="image-20211204215211156"></p>
+<h3 id="GBN协议总结"><a href="#GBN协议总结" class="headerlink" title="GBN协议总结"></a>GBN协议总结</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204215244572.png" alt="image-20211204215244572"></p>
+<h3 id="GBN协议例题"><a href="#GBN协议例题" class="headerlink" title="GBN协议例题"></a>GBN协议例题</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204215306420.png" alt="image-20211204215306420"></p>
+<p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204220749953.png" alt="image-20211204220749953"></p>
+<p>修正：3.应该是第一个ACK</p>
+<h2 id="选择重传协议SR"><a href="#选择重传协议SR" class="headerlink" title="选择重传协议SR"></a>选择重传协议SR</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221247315.png" alt="image-20211204221247315"></p>
+<h3 id="SR发送方需要响应的事"><a href="#SR发送方需要响应的事" class="headerlink" title="SR发送方需要响应的事"></a>SR发送方需要响应的事</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221314886.png" alt="image-20211204221314886"></p>
+<h3 id="SR接收方做的事"><a href="#SR接收方做的事" class="headerlink" title="SR接收方做的事"></a>SR接收方做的事</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221338837.png" alt="image-20211204221338837"></p>
+<h3 id="运行中的SR"><a href="#运行中的SR" class="headerlink" title="运行中的SR"></a>运行中的SR</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221412559.png" alt="image-20211204221412559"></p>
+<h3 id="SR滑动窗口的长度"><a href="#SR滑动窗口的长度" class="headerlink" title="SR滑动窗口的长度"></a>SR滑动窗口的长度</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221435635.png" alt="image-20211204221435635"></p>
+<h3 id="SR总结"><a href="#SR总结" class="headerlink" title="SR总结"></a>SR总结</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221454374.png" alt="image-20211204221454374"></p>
+<h3 id="SR协议例题"><a href="#SR协议例题" class="headerlink" title="SR协议例题"></a>SR协议例题</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221509579.png" alt="image-20211204221509579"></p>
 
                 
             </div>
@@ -867,48 +935,46 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                <a href="/2021/12/04/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="计算机网络期末复习">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="汇编实验总结">
                         
-                        <span class="card-title">计算机网络期末复习</span>
+                        <span class="card-title">汇编实验总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机网络复习总结，教材是计算机网络（第八版）谢希仁编著。主要包含各章知识点和对应题目。
+                            源于微机原理与接口技术课程的实验，之前没接触过汇编，所以学起来有点难，因此记录一下学习的点滴:)
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-04
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
-                                    计算机网络
+                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
+                                    编程语言
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/">
-                        <span class="chip bg-color">计算机网络复习</span>
+                    <a href="/tags/%E6%B1%87%E7%BC%96/">
+                        <span class="chip bg-color">汇编</span>
                     </a>
                     
                 </div>
@@ -1161,7 +1227,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">12.8k</span>
+                        class="white-color">14.5k</span>
             
             
             
