@@ -424,7 +424,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    3.6k
                 </div>
                 
 
@@ -638,7 +638,7 @@
 <p>2、透明传输</p>
 <p>3、差错检测</p>
 <h2 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204161218546.png" alt="image-20211204161218546"></p>
-<p>首先需要说明的是封装成帧是发送的时候做的，这也是为什么在其他层都是只增加首部，到数据链路层增加了首部和尾部。因为为了使接收方能够在收到信息后知道数据部分，就要有数据的开始和结束，因此也就有了不同的定界符。 </p>
+<p>首先需要说明的是封装成帧是发送的时候做的。</p>
 <p>同时，从这里可以看出，数据链路层对bit数据进行处理，不需要关心数字信号模拟信号的转换，而网络层则不需要关心bit数据，直接处理由链路层处理好的数据就行了。这里也能看出分层的好处，可谓各司其职但是又相辅相成。</p>
 <h2 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h2><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204161922169.png" alt="image-20211204161922169"></p>
 <h2 id="封装成帧的几种方法"><a href="#封装成帧的几种方法" class="headerlink" title="封装成帧的几种方法"></a>封装成帧的几种方法</h2><h3 id="1、字符统计法"><a href="#1、字符统计法" class="headerlink" title="1、字符统计法"></a>1、字符统计法</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204162228240.png" alt="image-20211204162228240"></p>
@@ -698,7 +698,71 @@
 <h3 id="SR滑动窗口的长度"><a href="#SR滑动窗口的长度" class="headerlink" title="SR滑动窗口的长度"></a>SR滑动窗口的长度</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221435635.png" alt="image-20211204221435635"></p>
 <h3 id="SR总结"><a href="#SR总结" class="headerlink" title="SR总结"></a>SR总结</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221454374.png" alt="image-20211204221454374"></p>
 <h3 id="SR协议例题"><a href="#SR协议例题" class="headerlink" title="SR协议例题"></a>SR协议例题</h3><p><img src="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211204221509579.png" alt="image-20211204221509579"></p>
-
+<h2 id="介质访问控制"><a href="#介质访问控制" class="headerlink" title="介质访问控制"></a>介质访问控制</h2><p>所谓介质访问控制，说白了就是在共享信道中，我们需要考虑一个重要的问题，那就是如何控制多个用户共同使用一个信道。于是就有了一下分类。</p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210414080.png" alt="image-20211205210414080"></p>
+<p>其中静态划分信道，是在通信之前就分配好了信道。这种方式不会发生冲突，但是这种方式代价高，不适应于局域网通信。</p>
+<p>在网络负载大的情况下，静态划分利用率高。</p>
+<p>在网络负载不大的时候，动态分配利用率高。</p>
+<h3 id="ALOHA协议"><a href="#ALOHA协议" class="headerlink" title="ALOHA协议"></a>ALOHA协议</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210436913.png" alt="image-20211205210436913"></p>
+<p>2、时隙ALOHA协议</p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210457126.png" alt="image-20211205210457126"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210503722.png" alt="image-20211205210503722"></p>
+<h2 id="CSMA（载波监听多路访问协议）"><a href="#CSMA（载波监听多路访问协议）" class="headerlink" title="CSMA（载波监听多路访问协议）**"></a>CSMA（载波监听多路访问协议）**</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210905894.png" alt="image-20211205210905894"></p>
+<h3 id="1-坚持CSMA"><a href="#1-坚持CSMA" class="headerlink" title="1-坚持CSMA"></a>1-坚持CSMA</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210936431.png" alt="image-20211205210936431"></p>
+<h3 id="非坚持CSMA"><a href="#非坚持CSMA" class="headerlink" title="非坚持CSMA"></a>非坚持CSMA</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205210950734.png" alt="image-20211205210950734"></p>
+<h3 id="p-坚持CSMA"><a href="#p-坚持CSMA" class="headerlink" title="p-坚持CSMA"></a>p-坚持CSMA</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211015840.png" alt="image-20211205211015840"></p>
+<h3 id="三种CSMA对比"><a href="#三种CSMA对比" class="headerlink" title="三种CSMA对比"></a>三种CSMA对比</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211033632.png" alt="image-20211205211033632"></p>
+<h2 id="CSMA-CD协议"><a href="#CSMA-CD协议" class="headerlink" title="CSMA/CD协议***"></a>CSMA/CD协议***</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211058337.png" alt="image-20211205211058337"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211557370.png" alt="image-20211205211557370"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211811641.png" alt="image-20211205211811641"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211902879.png" alt="image-20211205211902879"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211131045.png" alt="image-20211205211131045"></p>
+<p>有可能发生如下情况因此需要确定碰撞后的重传时机</p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205211204368.png" alt="image-20211205211204368"></p>
+<h3 id="截断二进制指数规避算法"><a href="#截断二进制指数规避算法" class="headerlink" title="截断二进制指数规避算法"></a>截断二进制指数规避算法</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212143500.png" alt="image-20211205212143500"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212209112.png" alt="image-20211205212209112"></p>
+<h3 id="最小帧长问题"><a href="#最小帧长问题" class="headerlink" title="最小帧长问题"></a>最小帧长问题</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212301736.png" alt="image-20211205212301736"></p>
+<p>64字节是对于10Mb/s的以太网。</p>
+<h2 id="CSMA-CA协议"><a href="#CSMA-CA协议" class="headerlink" title="CSMA/CA协议"></a>CSMA/CA协议</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212446674.png" alt="image-20211205212446674"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212458259.png" alt="image-20211205212458259"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212506424.png" alt="image-20211205212506424"></p>
+<h2 id="轮询访问介质控制"><a href="#轮询访问介质控制" class="headerlink" title="轮询访问介质控制"></a>轮询访问介质控制</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212550998.png" alt="image-20211205212550998"></p>
+<h3 id="令牌传递协议"><a href="#令牌传递协议" class="headerlink" title="令牌传递协议"></a>令牌传递协议</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212641300.png" alt="image-20211205212641300"></p>
+<h3 id="MAC协议总结"><a href="#MAC协议总结" class="headerlink" title="MAC协议总结"></a>MAC协议总结</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212736230.png" alt="image-20211205212736230"></p>
+<h2 id="局域网基本概念和体系"><a href="#局域网基本概念和体系" class="headerlink" title="局域网基本概念和体系"></a>局域网基本概念和体系</h2><h3 id="局域网概念"><a href="#局域网概念" class="headerlink" title="局域网概念"></a>局域网概念</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212806220.png" alt="image-20211205212806220"></p>
+<h3 id="局域网拓扑图"><a href="#局域网拓扑图" class="headerlink" title="局域网拓扑图"></a>局域网拓扑图</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212821520.png" alt="image-20211205212821520"></p>
+<h3 id="局域网传输介质"><a href="#局域网传输介质" class="headerlink" title="局域网传输介质"></a>局域网传输介质</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212849633.png" alt="image-20211205212849633"></p>
+<h3 id="局域网介质访问控制方法"><a href="#局域网介质访问控制方法" class="headerlink" title="局域网介质访问控制方法"></a>局域网介质访问控制方法</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212901979.png" alt="image-20211205212901979"></p>
+<h3 id="局域网的分类"><a href="#局域网的分类" class="headerlink" title="局域网的分类"></a>局域网的分类</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212918935.png" alt="image-20211205212918935"></p>
+<h3 id="MAC子层和LLC子层"><a href="#MAC子层和LLC子层" class="headerlink" title="MAC子层和LLC子层"></a>MAC子层和LLC子层</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205212948564.png" alt="image-20211205212948564"></p>
+<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213045038.png" alt="image-20211205213045038"></p>
+<p><strong>以太网只实现无差错接收，不实现可靠传输。</strong></p>
+<h3 id="以太网拓扑"><a href="#以太网拓扑" class="headerlink" title="以太网拓扑"></a>以太网拓扑</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213134093.png" alt="image-20211205213134093"></p>
+<h3 id="10-base-T以太网"><a href="#10-base-T以太网" class="headerlink" title="10-base-T以太网"></a>10-base-T以太网</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213153154.png" alt="image-20211205213153154"></p>
+<h3 id="适配器与MAC地址"><a href="#适配器与MAC地址" class="headerlink" title="适配器与MAC地址"></a>适配器与MAC地址</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213219598.png" alt="image-20211205213219598"></p>
+<h3 id="以太网的MAC帧"><a href="#以太网的MAC帧" class="headerlink" title="以太网的MAC帧"></a>以太网的MAC帧</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213420370.png" alt="image-20211205213420370"></p>
+<h2 id="IEEE-802-11无线局域网"><a href="#IEEE-802-11无线局域网" class="headerlink" title="IEEE 802.11无线局域网"></a>IEEE 802.11无线局域网</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213556404.png" alt="image-20211205213556404"></p>
+<h2 id="PPP协议"><a href="#PPP协议" class="headerlink" title="PPP协议"></a>PPP协议</h2><p>PPP协议用在广域网中</p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213633116.png" alt="image-20211205213633116"></p>
+<h3 id="PPP协议的特点"><a href="#PPP协议的特点" class="headerlink" title="PPP协议的特点"></a>PPP协议的特点</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213647868.png" alt="image-20211205213647868"></p>
+<h3 id="PPP协议应满足的要求"><a href="#PPP协议应满足的要求" class="headerlink" title="PPP协议应满足的要求"></a>PPP协议应满足的要求</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213702339.png" alt="image-20211205213702339"></p>
+<h3 id="PPP协议的三个组成部分"><a href="#PPP协议的三个组成部分" class="headerlink" title="PPP协议的三个组成部分"></a>PPP协议的三个组成部分</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213732959.png" alt="image-20211205213732959"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213758066.png" alt="image-20211205213758066"></p>
+<h3 id="PPP协议的帧格式"><a href="#PPP协议的帧格式" class="headerlink" title="PPP协议的帧格式"></a>PPP协议的帧格式</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213815619.png" alt="image-20211205213815619"></p>
+<h2 id="链路层设备"><a href="#链路层设备" class="headerlink" title="链路层设备"></a>链路层设备</h2><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205213908169.png" alt="image-20211205213908169"></p>
+<p>集线器只是单纯的把数据群发，并不能隔离冲突域。集线器的意义在于能够简化总线型的连接方式。</p>
+<h3 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205214112446.png" alt="image-20211205214112446"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205214125524.png" alt="image-20211205214125524"></p>
+<h3 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205214216489.png" alt="image-20211205214216489"></p>
+<h3 id="广播域和冲突域"><a href="#广播域和冲突域" class="headerlink" title="广播域和冲突域**"></a>广播域和冲突域**</h3><p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205214237048.png" alt="image-20211205214237048"></p>
+<p><img src=".//%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/image-20211205214318378.png" alt="image-20211205214318378"></p>
+<p>例如： 有十个站连接到了以太网。计算每个站能得到的带宽。</p>
+<ol>
+<li>10个站都连接在一个10Mb/s的以太网集线器上：1Mb/s</li>
+<li>10个站都连接在一个100Mb/s的以太网集线器上：10Mb/s</li>
+<li>10个站都连接在一个10Mb/s的以太网交换机上：10Mb/s</li>
+</ol>
+<h2 id="第三章题目总结：）"><a href="#第三章题目总结：）" class="headerlink" title="第三章题目总结：）"></a>第三章题目总结：）</h2>
                 
             </div>
             <hr/>
@@ -1227,7 +1291,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">14.5k</span>
+                        class="white-color">15k</span>
             
             
             
