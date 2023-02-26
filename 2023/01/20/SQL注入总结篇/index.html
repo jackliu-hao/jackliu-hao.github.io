@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="汇编实验总结, Welcome">
-    <meta name="description" content="源于微机原理与接口技术课程的实验，之前没接触过汇编，所以学起来有点难，因此记录一下学习的点滴:)">
+    <meta name="keywords" content="SQL注入总结篇, Welcome">
+    <meta name="description" content="SQL注入总结篇，常见漏洞函数以及绕过方式">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>汇编实验总结 | Welcome</title>
+    <title>SQL注入总结篇 | Welcome</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -263,12 +263,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">汇编实验总结</h1>
+                    <h1 class="description center-align post-title">SQL注入总结篇</h1>
                 </div>
             </div>
         </div>
@@ -391,8 +391,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B1%87%E7%BC%96/">
-                                <span class="chip bg-color">汇编</span>
+                            <a href="/tags/sql%E6%B3%A8%E5%85%A5/">
+                                <span class="chip bg-color">sql注入</span>
                             </a>
                         
                     </div>
@@ -403,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
-                                编程语言
+                            <a href="/categories/WEB%E5%AE%89%E5%85%A8/" class="post-category">
+                                WEB安全
                             </a>
                         
                     </div>
@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-04
+                    2023-01-20
                 </div>
                 
 
@@ -425,7 +425,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    844
+                    6
                 </div>
                 
 
@@ -442,106 +442,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="文章背景"><a href="#文章背景" class="headerlink" title="文章背景"></a>文章背景</h1><p>在此之前只是听说汇编苦涩难懂，但是没有接触过。直到大三学了微机原理与接口技术，但是这本书并不是纯汇编，还有8086的一些原理以及模电数电等等。</p>
-<p>总体来说，上课听课只是从大的方向了解，但是很多细节都没注意，所以每次的实验认真完成，一方面可以复习学过的，一方面在不断的积累经验。：）</p>
-<h1 id="实验一：根据内存数据回显不同结果"><a href="#实验一：根据内存数据回显不同结果" class="headerlink" title="实验一：根据内存数据回显不同结果"></a>实验一：根据内存数据回显不同结果</h1><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">;这段代码是如果内存数据是负数，就在屏幕显示-1（FFH），如果是0就显示00h , 如果是正数就显示01h
-
-data segment
-
-	
-	varx db -25
-	vary db ?
-	
-data ends
-
-stack segment
-
-stack ends
-
-code segment
-	assume cs:code,ds:data,ss:stack
-start:
-	mov ax, data ;
-	mov ds, ax
-	MOV AL, VARX ;al = -25
-	CMP AL,0  ; cf = 0 , zf = 0 ,sf=1 ,of = 0
-	JGE NEXT ; &gt;= 的时候跳转 即sf=of ，这里不跳转 ,也就是此时al 是负数
-	MOV AL,0FFH ;al = ff ,-1的8位补码
-	JMP halt 
-NEXT:
-	;当varx&gt;=0的时候跳转过来
-	JE ZERO0  ; zf = 1 也就是varx=0
-	MOV AL,1 ;al =1
-	JMP halt
-ZERO0: 
-	MOV AL,0 ; al = 0
-
-; =====================halt 
-halt: 
-    mov vary,al ; 把al赋值 给vary
-	mov dl,vary ; 使用dl 操作vary 保留vary 不变
-    MOV CL,4 
-	ROR DL,CL  ;右移4位
-	AND DL,0FH ; 高四位置0 ，此时的低四位是原数据的高四位
-	CMP DL,0AH ; 判断是否大于a
-	jb  NUA ; 当dl &lt; a的时候跳转到nua直接将高位显示
-	;若高四位的值 &gt;= a ， 假设是 A=10  , 则需要+7 -&gt;  11h + 30h = 64d -&gt;A
-	add dl,7 
-;================halt end
-NUA:
-	ADD DL,30H ; 把数字转换成相应的字符
-	MOV AH,2  ;2号调用，显示高四位字符
-	INT 21H	
-	MOV DL,VARY ;  dl =  vary
-	AND DL,0fH  ;此时取低四位
-	CMP DL,0AH  ;比较低四位，若低四位 &lt; a 则跳转到nub
-	JB NUB 
-	ADD DL,7  ;同样若&gt;a，需要+7 
-NUB:
-	ADD DL,30H 
-	MOV AH,2
-	INT 21H
-	MOV DL,'h' ;显示h
-	MOV AH,2
-	INT 21H
-	mov ah,4ch; 退出程序
-	int 21h
-code ends
-end start
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="提取代码块"><a href="#提取代码块" class="headerlink" title="提取代码块"></a>提取代码块</h2><p>屏幕上显示数据，这个功能很常用，因此我们可以把它提取出来，方便以后直接使用。</p>
-<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">halt: 
-    ;此时vary是我们希望在屏幕上显示的字符。
-	mov dl,vary ; 使用dl 操作vary 保留vary 不变
-    MOV CL,4 
-	ROR DL,CL  ;右移4位
-	AND DL,0FH ; 高四位置0 ，此时的低四位是原数据的高四位
-	CMP DL,0AH ; 判断是否大于a
-	jb  NUA ; 当dl &lt; a的时候跳转到nua直接将高位显示
-	;若高四位的值 &gt;= a ， 假设是 A=10  , 则需要+7 -&gt;  11h + 30h = 64d -&gt;A
-	add dl,7 
-;================halt end
-NUA:
-	ADD DL,30H ; 把数字转换成相应的字符
-	MOV AH,2  ;2号调用，显示高四位字符
-	INT 21H	
-	MOV DL,VARY ;  dl =  vary
-	AND DL,0fH  ;此时取低四位
-	CMP DL,0AH  ;比较低四位，若低四位 &lt; a 则跳转到nub
-	JB NUB 
-	ADD DL,7  ;同样若&gt;a，需要+7 
-NUB:
-	ADD DL,30H 
-	MOV AH,2
-	INT 21H
-	MOV DL,'h' ;显示h
-	MOV AH,2
-	INT 21H
-	mov ah,4ch; 退出程序
-	int 21h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>其中在使用ROR的时候要注意，这个指令的源操作数只能是1或者cl，也就是当位移数大于1的时候，要mov cl , 4  把具体位移个数存到cl中。</p>
+                <pre class="line-numbers language-text"><code class="language-text">{% pdf /pdf/SQL注入.pdf %}
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
@@ -568,7 +470,7 @@ NUB:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jackliu-hao.github.io/2021/12/04/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">https://jackliu-hao.github.io/2021/12/04/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</a>
+                    <a href="https://jackliu-hao.github.io/2023/01/20/SQL%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93%E7%AF%87/">https://jackliu-hao.github.io/2023/01/20/SQL%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93%E7%AF%87/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,8 +508,8 @@ NUB:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B1%87%E7%BC%96/">
-                                    <span class="chip bg-color">汇编</span>
+                                <a href="/tags/sql%E6%B3%A8%E5%85%A5/">
+                                    <span class="chip bg-color">sql注入</span>
                                 </a>
                             
                         </div>
@@ -779,42 +681,48 @@ NUB:
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                <a href="/2023/01/20/SQL%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93%E7%AF%87/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="计算机组成原理">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="SQL注入总结篇">
                         
-                        <span class="card-title">计算机组成原理</span>
+                        <span class="card-title">SQL注入总结篇</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            假期学习的计算机组成原理，记下笔记。课程来自王道考研。
+                            SQL注入总结篇，常见漏洞函数以及绕过方式
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-20
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            jackliu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/WEB%E5%AE%89%E5%85%A8/" class="post-category">
+                                    WEB安全
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">计算机组成原理</span>
+                    <a href="/tags/sql%E6%B3%A8%E5%85%A5/">
+                        <span class="chip bg-color">sql注入</span>
                     </a>
                     
                 </div>
@@ -828,44 +736,36 @@ NUB:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                <a href="/2022/12/25/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="计算机网络期末复习">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="PHP代码审计">
                         
-                        <span class="card-title">计算机网络期末复习</span>
+                        <span class="card-title">PHP代码审计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机网络复习总结，教材是计算机网络（第八版）谢希仁编著。主要包含各章知识点和对应题目。
+                            PHP代码审计学习笔记，主要包括，常见WEB漏洞，以及PHP框架的常见漏洞。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-25
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                    计算机
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="post-category">
+                                    代码审计
                                 </a>
                             
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/">
-                        <span class="chip bg-color">计算机网络复习</span>
-                    </a>
-                    
                 </div>
                 
             </div>

@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="汇编实验总结, Welcome">
-    <meta name="description" content="源于微机原理与接口技术课程的实验，之前没接触过汇编，所以学起来有点难，因此记录一下学习的点滴:)">
+    <meta name="keywords" content="PythonWEB课程设计, Welcome">
+    <meta name="description" content="使用Django框架，做的留言板。简单应用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>汇编实验总结 | Welcome</title>
+    <title>PythonWEB课程设计 | Welcome</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -263,12 +263,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">汇编实验总结</h1>
+                    <h1 class="description center-align post-title">PythonWEB课程设计</h1>
                 </div>
             </div>
         </div>
@@ -391,8 +391,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%B1%87%E7%BC%96/">
-                                <span class="chip bg-color">汇编</span>
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">编程</span>
                             </a>
                         
                     </div>
@@ -403,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" class="post-category">
-                                编程语言
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="post-category">
+                                代码审计
                             </a>
                         
                     </div>
@@ -416,7 +416,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-12-04
+                    2022-12-25
                 </div>
                 
 
@@ -425,7 +425,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    844
+                    1.1k
                 </div>
                 
 
@@ -442,106 +442,79 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="文章背景"><a href="#文章背景" class="headerlink" title="文章背景"></a>文章背景</h1><p>在此之前只是听说汇编苦涩难懂，但是没有接触过。直到大三学了微机原理与接口技术，但是这本书并不是纯汇编，还有8086的一些原理以及模电数电等等。</p>
-<p>总体来说，上课听课只是从大的方向了解，但是很多细节都没注意，所以每次的实验认真完成，一方面可以复习学过的，一方面在不断的积累经验。：）</p>
-<h1 id="实验一：根据内存数据回显不同结果"><a href="#实验一：根据内存数据回显不同结果" class="headerlink" title="实验一：根据内存数据回显不同结果"></a>实验一：根据内存数据回显不同结果</h1><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h2><pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">;这段代码是如果内存数据是负数，就在屏幕显示-1（FFH），如果是0就显示00h , 如果是正数就显示01h
+                <h1 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h1><p>​	开发工具使用vscode ， 前端使用layui框架和jQuery ，后端使用django==2.1.7 ； 数据库使用mysql8.0 。前端统一使用Ajax请求，后端返回json字符串，前端存储使用sessionStorage，登录信息使用session存储。</p>
+<h1 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h1><h2 id="1、登录注册功能"><a href="#1、登录注册功能" class="headerlink" title="1、登录注册功能"></a>1、登录注册功能</h2><p>​	登陆的时候使用js对输入框信息进行校验，若不符合要求则弹框提醒。前端验证通过后，使用Ajax请求发送数据，后端验证后返回json数据，前端根据json数据，进行相应的处理。如果登录失败则提示相应信息，如果登录成功则前往留言板查看留言。</p>
+<p>​	注册信息的时候，首先使用前端技术验证用户名和密码是否符合要求，在用户名的input框失去焦点后，发送Ajax请求，前端接收到后端传送的json数据验证输入的用户名是否已经重复，如果用户名已存在，则动态的将提示信息显示在页面。如果注册信息都符合要求则注册成功后跳转到登录页面。</p>
+<h2 id="2、留言功能"><a href="#2、留言功能" class="headerlink" title="2、留言功能"></a>2、留言功能</h2><p>​	用户可以进行留言，留言信息包括留言标题和留言内容。普通用户只能查看自己的留言信息，管理员可以查看所有的留言信息，并且可以删除指定的留言信息。查看留言的信息内容包含留言用户名，留言标题，留言内容，留言时间。</p>
+<h2 id="3、权限管理"><a href="#3、权限管理" class="headerlink" title="3、权限管理"></a>3、权限管理</h2><p>​	用户角色分为普通用户和管理员，普通用户只能查看自己的留言信息，删除自己的留言信息；管理员可以查看所有留言信息，并且有权删除留言信息。</p>
+<h1 id="总体设计"><a href="#总体设计" class="headerlink" title="总体设计"></a>总体设计</h1><h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><h3 id="User表"><a href="#User表" class="headerlink" title="User表"></a>User表</h3><p>这个表主要存储用户信息，包换字段uid(主键)，name(姓名)，passwd(密码)，auth(权限，0表示普通用户，1表示管理员)。</p>
+<h3 id="user-message表"><a href="#user-message表" class="headerlink" title="user_message表"></a>user_message表</h3><p>这个表主要存储留言信息。包含字段:id(主键)，name(留言者用户名)，title(留言标题)， message(留言内容)，time(留言时间)，uid(发送者id)。</p>
+<p>其中一个用户可以发送多条留言，一条留言只对应一个用户，因此这两个表属于一对多的关系。所以，在user_message表中的uid字段设置外键，引用User表的uid字段。</p>
+<h3 id="model层代码："><a href="#model层代码：" class="headerlink" title="model层代码："></a>model层代码：</h3><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> django<span class="token punctuation">.</span>db <span class="token keyword">import</span> models
 
-data segment
+<span class="token keyword">class</span> <span class="token class-name">UserMessage</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    id <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'主键'</span><span class="token punctuation">)</span>
+    uid <span class="token operator">=</span> models<span class="token punctuation">.</span>ForeignKey<span class="token punctuation">(</span><span class="token string">'User'</span><span class="token punctuation">,</span>to_field<span class="token operator">=</span><span class="token string">"uid"</span><span class="token punctuation">,</span>on_delete<span class="token operator">=</span>models<span class="token punctuation">.</span>CASCADE<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#指定外键</span>
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'用户名'</span><span class="token punctuation">)</span>
+    title <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'联系地址'</span><span class="token punctuation">)</span>
+    message <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'留言信息'</span><span class="token punctuation">)</span>
+    time <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">255</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'留言时间'</span><span class="token punctuation">)</span>
+    
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'user_message'</span>
 
-	
-	varx db -25
-	vary db ?
-	
-data ends
+<span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">(</span>models<span class="token punctuation">.</span>Model<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    uid <span class="token operator">=</span> models<span class="token punctuation">.</span>AutoField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">10</span><span class="token punctuation">,</span>primary_key<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span><span class="token string">'主键'</span><span class="token punctuation">)</span>
+    name <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">25</span><span class="token punctuation">,</span> null<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> blank<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'用户名'</span><span class="token punctuation">)</span>
+    passwd <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span>verbose_name<span class="token operator">=</span>u<span class="token string">'密码'</span><span class="token punctuation">)</span>
+    auth <span class="token operator">=</span> models<span class="token punctuation">.</span>CharField<span class="token punctuation">(</span>max_length<span class="token operator">=</span><span class="token number">50</span><span class="token punctuation">,</span> verbose_name<span class="token operator">=</span>u<span class="token string">'权限'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#0代表普通用户 ，1代表管理员权限</span>
+    <span class="token keyword">class</span> <span class="token class-name">Meta</span><span class="token punctuation">:</span>
+        db_table <span class="token operator">=</span> <span class="token string">'user'</span>
+        
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="接口说明"><a href="#接口说明" class="headerlink" title="接口说明"></a>接口说明</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token triple-quoted-string string">'''登录成功后把user的信息存储到session中，在以下接口中要先判断session是否存在，来判断登录状态，若未登录则跳转到登录界面'''</span>
 
-stack segment
+<span class="token triple-quoted-string string">'''接受前端获取的用户名和密码，验证是否存在，将信息返回至前端 '''</span>
+login<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
 
-stack ends
+<span class="token triple-quoted-string string">'''接受前端获取的用户名和密码，将注册信息存入数据库'''</span>
+register<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
 
-code segment
-	assume cs:code,ds:data,ss:stack
-start:
-	mov ax, data ;
-	mov ds, ax
-	MOV AL, VARX ;al = -25
-	CMP AL,0  ; cf = 0 , zf = 0 ,sf=1 ,of = 0
-	JGE NEXT ; &gt;= 的时候跳转 即sf=of ，这里不跳转 ,也就是此时al 是负数
-	MOV AL,0FFH ;al = ff ,-1的8位补码
-	JMP halt 
-NEXT:
-	;当varx&gt;=0的时候跳转过来
-	JE ZERO0  ; zf = 1 也就是varx=0
-	MOV AL,1 ;al =1
-	JMP halt
-ZERO0: 
-	MOV AL,0 ; al = 0
+<span class="token triple-quoted-string string">'''接收前端用户名，根据用户名查询信息，判断此用户名是否已存在，将信息返回至前端 '''</span>
+checkUsername<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
 
-; =====================halt 
-halt: 
-    mov vary,al ; 把al赋值 给vary
-	mov dl,vary ; 使用dl 操作vary 保留vary 不变
-    MOV CL,4 
-	ROR DL,CL  ;右移4位
-	AND DL,0FH ; 高四位置0 ，此时的低四位是原数据的高四位
-	CMP DL,0AH ; 判断是否大于a
-	jb  NUA ; 当dl &lt; a的时候跳转到nua直接将高位显示
-	;若高四位的值 &gt;= a ， 假设是 A=10  , 则需要+7 -&gt;  11h + 30h = 64d -&gt;A
-	add dl,7 
-;================halt end
-NUA:
-	ADD DL,30H ; 把数字转换成相应的字符
-	MOV AH,2  ;2号调用，显示高四位字符
-	INT 21H	
-	MOV DL,VARY ;  dl =  vary
-	AND DL,0fH  ;此时取低四位
-	CMP DL,0AH  ;比较低四位，若低四位 &lt; a 则跳转到nub
-	JB NUB 
-	ADD DL,7  ;同样若&gt;a，需要+7 
-NUB:
-	ADD DL,30H 
-	MOV AH,2
-	INT 21H
-	MOV DL,'h' ;显示h
-	MOV AH,2
-	INT 21H
-	mov ah,4ch; 退出程序
-	int 21h
-code ends
-end start
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token triple-quoted-string string">'''根据id删除留言信息，并且将返回成功与否信息传至前端，删除成功后刷新页面'''</span>
+delMsgByMid<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
 
-<h2 id="提取代码块"><a href="#提取代码块" class="headerlink" title="提取代码块"></a>提取代码块</h2><p>屏幕上显示数据，这个功能很常用，因此我们可以把它提取出来，方便以后直接使用。</p>
-<pre class="line-numbers language-assembly" data-language="assembly"><code class="language-assembly">halt: 
-    ;此时vary是我们希望在屏幕上显示的字符。
-	mov dl,vary ; 使用dl 操作vary 保留vary 不变
-    MOV CL,4 
-	ROR DL,CL  ;右移4位
-	AND DL,0FH ; 高四位置0 ，此时的低四位是原数据的高四位
-	CMP DL,0AH ; 判断是否大于a
-	jb  NUA ; 当dl &lt; a的时候跳转到nua直接将高位显示
-	;若高四位的值 &gt;= a ， 假设是 A=10  , 则需要+7 -&gt;  11h + 30h = 64d -&gt;A
-	add dl,7 
-;================halt end
-NUA:
-	ADD DL,30H ; 把数字转换成相应的字符
-	MOV AH,2  ;2号调用，显示高四位字符
-	INT 21H	
-	MOV DL,VARY ;  dl =  vary
-	AND DL,0fH  ;此时取低四位
-	CMP DL,0AH  ;比较低四位，若低四位 &lt; a 则跳转到nub
-	JB NUB 
-	ADD DL,7  ;同样若&gt;a，需要+7 
-NUB:
-	ADD DL,30H 
-	MOV AH,2
-	INT 21H
-	MOV DL,'h' ;显示h
-	MOV AH,2
-	INT 21H
-	mov ah,4ch; 退出程序
-	int 21h<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token triple-quoted-string string">'''
+    获取前端留言的信息，需要在此接口中补充用户uid，发送时间，把数据封装完成后
+    保存到数据库，并且返回成功与否的信息
+'''</span>
+saveMsg<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
 
-<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>其中在使用ROR的时候要注意，这个指令的源操作数只能是1或者cl，也就是当位移数大于1的时候，要mov cl , 4  把具体位移个数存到cl中。</p>
+<span class="token triple-quoted-string string">'''
+    通过session获取用户，若用户的auth值为0，则表示普通用户，在查询留言表的时候根据uid查询。
+    若auth的值为1，则表示管理员用户，则把留言表中的数据全部查询。	
+    把查询结果转成json返回至前端
+'''</span>
+getMsg<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">'''退出登录，清除session，跳转到登录界面'''</span>
+exitLogin<span class="token punctuation">(</span>request<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="作品展示"><a href="#作品展示" class="headerlink" title="作品展示"></a>作品展示</h1><h2 id="登录功能展示"><a href="#登录功能展示" class="headerlink" title="登录功能展示"></a>登录功能展示</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204443953.png" alt="image-20211210204443953"></p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204518293.png" alt="image-20211210204518293"></p>
+<h2 id="注册功能展示"><a href="#注册功能展示" class="headerlink" title="注册功能展示"></a>注册功能展示</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204641774.png" alt="image-20211210204641774"></p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204818488.png" alt="image-20211210204818488"></p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204950631.png" alt="image-20211210204950631"></p>
+<h2 id="查看留言展示"><a href="#查看留言展示" class="headerlink" title="查看留言展示"></a>查看留言展示</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210202846083.png" alt="image-20211210202846083"></p>
+<h2 id="增加留言展示"><a href="#增加留言展示" class="headerlink" title="增加留言展示"></a>增加留言展示</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204040827.png" alt="image-20211210204040827"></p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204109003.png" alt="image-20211210204109003"></p>
+<h2 id="删除留言"><a href="#删除留言" class="headerlink" title="删除留言"></a>删除留言</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204208016.png" alt="image-20211210204208016"></p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204221925.png" alt="image-20211210204221925"></p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210204242283.png" alt="image-20211210204242283"></p>
+<h2 id="权限管理展示"><a href="#权限管理展示" class="headerlink" title="权限管理展示"></a>权限管理展示</h2><h3 id="普通用户"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户</h3><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210203730276.png" alt="image-20211210203730276"></p>
+<h3 id="管理员"><a href="#管理员" class="headerlink" title="管理员"></a>管理员</h3><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20211210203646655.png" alt="image-20211210203646655"></p>
 
                 
             </div>
@@ -568,7 +541,7 @@ NUB:
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://jackliu-hao.github.io/2021/12/04/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/">https://jackliu-hao.github.io/2021/12/04/%E6%B1%87%E7%BC%96%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93/</a>
+                    <a href="https://jackliu-hao.github.io/2022/12/25/PythonWEB%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">https://jackliu-hao.github.io/2022/12/25/PythonWEB%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -606,8 +579,8 @@ NUB:
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%B1%87%E7%BC%96/">
-                                    <span class="chip bg-color">汇编</span>
+                                <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">编程</span>
                                 </a>
                             
                         </div>
@@ -783,40 +756,36 @@ NUB:
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                <a href="/2022/12/25/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="计算机组成原理">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="PHP代码审计">
                         
-                        <span class="card-title">计算机组成原理</span>
+                        <span class="card-title">PHP代码审计</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            假期学习的计算机组成原理，记下笔记。课程来自王道考研。
+                            PHP代码审计学习笔记，主要包括，常见WEB漏洞，以及PHP框架的常见漏洞。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-25
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            jackliu
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="post-category">
+                                    代码审计
+                                </a>
+                            
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
-                        <span class="chip bg-color">计算机组成原理</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -828,31 +797,31 @@ NUB:
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/12/02/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0/">
+                <a href="/2022/02/26/hyperledger%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="计算机网络期末复习">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="hyperledger环境搭建">
                         
-                        <span class="card-title">计算机网络期末复习</span>
+                        <span class="card-title">hyperledger环境搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机网络复习总结，教材是计算机网络（第八版）谢希仁编著。主要包含各章知识点和对应题目。
+                            hyperledger环境搭建，以及配置内容
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" class="post-category">
-                                    计算机
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    环境搭建
                                 </a>
                             
                             
@@ -862,8 +831,8 @@ NUB:
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%A4%8D%E4%B9%A0/">
-                        <span class="chip bg-color">计算机网络复习</span>
+                    <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                        <span class="chip bg-color">区块链</span>
                     </a>
                     
                 </div>

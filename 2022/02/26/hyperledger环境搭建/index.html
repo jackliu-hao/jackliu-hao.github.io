@@ -1,0 +1,2568 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="hyperledger环境搭建, Welcome">
+    <meta name="description" content="hyperledger环境搭建，以及配置内容">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>hyperledger环境搭建 | Welcome</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<meta name="generator" content="Hexo 6.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Welcome</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Welcome</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">hyperledger环境搭建</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        height: 700px;
+        padding-left: 20px;
+        opacity: 0.7;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+        overflow-y: scroll;
+    }
+
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                                <span class="chip bg-color">区块链</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                环境搭建
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2022-02-26
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    9.3k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="hyperledger环境搭建"><a href="#hyperledger环境搭建" class="headerlink" title="hyperledger环境搭建"></a>hyperledger环境搭建</h1><h2 id="1、安装docker"><a href="#1、安装docker" class="headerlink" title="1、安装docker"></a>1、安装docker</h2><h2 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h2><h2 id="3、hyperledger-fabic执行流程"><a href="#3、hyperledger-fabic执行流程" class="headerlink" title="3、hyperledger fabic执行流程"></a>3、hyperledger fabic执行流程</h2><p>1、 启动区块链的测试网络   ==&gt;  ./byfn.sh -m up</p>
+<p>2、 创建证书 ,使用cryptogen的工具  ==&gt; Generate certificates using cryptogen tool</p>
+<p>3、 创造order节点的创世区块 ==&gt;  Generating Order Genesis block</p>
+<p>4、创建channel ==&gt; Generating channel configuration transaction ‘channel.tx’</p>
+<p>5、创建锚节点</p>
+<pre><code>Generating anchor peer update for org_goMSP
+
+Generating anchor peer update for org_cppMSP
+</code></pre>
+<p>6、docker启动</p>
+<pre><code>Creating network "net_byfn" with the default driver
+Creating volume "net_orderer.example.com" with default driver
+Creating volume "net_peer0.org_go.example.com" with default driver
+Creating volume "net_peer1.org_go.example.com" with default driver
+Creating volume "net_peer0.org_cpp.example.com" with default driver
+Creating volume "net_peer1.org_cpp.example.com" with default driver
+Creating orderer.example.com    ... done
+Creating peer0.org_cpp.example.com ... done
+Creating peer0.org_go.example.com ... done
+Creating peer1.org_go.example.com ... done
+Creating peer1.org_cpp.example.com ... done
+Creating cli                    ... done
+</code></pre>
+<p>7、org_go里面peer0创建一个channel</p>
+<pre><code>Channel "mychannel" is created successfully
+</code></pre>
+<p>8、org_go的peer0加入mychannel</p>
+<pre><code>peer1.org_go joined on the channel "mychannel"
+</code></pre>
+<p>9、创建锚节点（anchor peer）</p>
+<p>10、安装chaincode</p>
+<p>11、实例化chaincode 背书策略 一个人统一就行</p>
+<p>12、在org_cpp的实例化，可以在org_go查询</p>
+<h1 id="手动安装hyperledger"><a href="#手动安装hyperledger" class="headerlink" title="手动安装hyperledger"></a>手动安装hyperledger</h1><h2 id="1、下载docker镜像"><a href="#1、下载docker镜像" class="headerlink" title="1、下载docker镜像"></a>1、下载docker镜像</h2><pre class="line-numbers language-shell"><code class="language-shell">docker pull hyperledger/fabric-peer:x86_64-1.1.0
+docker pull hyperledger/fabric-order:x86_64-1.1.0
+docker pull hyperledger/fabric-ccenv:x86_64-1.1.0
+docker pull hyperledger/fabric-tools:x86_64-1.1.0
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2、拉取第三方镜像"><a href="#2、拉取第三方镜像" class="headerlink" title="2、拉取第三方镜像"></a>2、拉取第三方镜像</h2><pre><code>couchdb  kafka zookeeper
+docker pull hyperledger/fabric...
+</code></pre>
+<h2 id="3、下载实例代码仓库"><a href="#3、下载实例代码仓库" class="headerlink" title="3、下载实例代码仓库"></a>3、下载实例代码仓库</h2><pre><code>git clone -b master ....
+</code></pre>
+<h2 id="4、下载所需的二进制文件"><a href="#4、下载所需的二进制文件" class="headerlink" title="4、下载所需的二进制文件"></a>4、下载所需的二进制文件</h2><pre><code>curl ....
+</code></pre>
+<p>docker rm $(docker ps -aq)</p>
+<h1 id="手动搭建网络"><a href="#手动搭建网络" class="headerlink" title="手动搭建网络"></a>手动搭建网络</h1><h2 id="1、编写配置文件"><a href="#1、编写配置文件" class="headerlink" title="1、编写配置文件"></a>1、编写配置文件</h2><p>cryptogen  :生成对应的证书的工具</p>
+<p>cryptogen showtemplate  &gt; a.yaml  输出配置文件的模板到a.yaml</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+<span class="token comment" spellcheck="true"># "OrdererOrgs" - Definition of organizations managing orderer nodes</span>
+<span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+<span class="token comment" spellcheck="true">#排序节点对应的组织 ，可以集群</span>
+<span class="token key atrule">OrdererOrgs</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+  <span class="token comment" spellcheck="true"># Orderer</span>
+  <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">Name</span><span class="token punctuation">:</span> Orderer  <span class="token comment" spellcheck="true"># 排序节点组织的名字 ，这里配置的是组织</span>
+    <span class="token key atrule">Domain</span><span class="token punctuation">:</span> example.com  <span class="token comment" spellcheck="true">#根域名，排序节点组织的根域名</span>
+    <span class="token key atrule">EnableNodeOUs</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true"># </span>
+
+    <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+    <span class="token comment" spellcheck="true"># "Specs" - See PeerOrgs below for complete description</span>
+    <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+    <span class="token comment" spellcheck="true">#使用Specs，二级域名可以自己指定</span>
+    <span class="token key atrule">Specs</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">Hostname</span><span class="token punctuation">:</span> orderer   <span class="token comment" spellcheck="true"># 访问这台order对饮的域名是 ： order.example.com </span>
+      <span class="token comment" spellcheck="true">#可能有其他的Hostname: orderer1 ，在访问的时候的域名是:  order1.example.com</span>
+
+<span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+<span class="token comment" spellcheck="true"># "PeerOrgs" - Definition of organizations managing peer nodes</span>
+<span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+<span class="token key atrule">PeerOrgs</span><span class="token punctuation">:</span>
+  <span class="token comment" spellcheck="true">#此配置文件共有两个组织</span>
+  <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+  <span class="token comment" spellcheck="true"># org_go</span>
+  <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">Name</span><span class="token punctuation">:</span> org_go    <span class="token comment" spellcheck="true">#第一个组织的名字 ， 自己的指定 </span>
+    <span class="token key atrule">Domain</span><span class="token punctuation">:</span> org_go.example.com   <span class="token comment" spellcheck="true">#访问第一个组织用的根域名</span>
+    <span class="token key atrule">EnableNodeOUs</span><span class="token punctuation">:</span> <span class="token boolean important">true    </span><span class="token comment" spellcheck="true">#是否支生成证书</span>
+   
+    <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+    <span class="token key atrule">Template</span><span class="token punctuation">:</span>      <span class="token comment" spellcheck="true">#模板 ，根据默认的规则生成2个peer存储数据的节点</span>
+      <span class="token key atrule">Count</span><span class="token punctuation">:</span> <span class="token number">2  </span><span class="token comment" spellcheck="true">#1. peer0.org_go.example.com     peer1.org_go.example.com </span>
+    <span class="token key atrule">Users</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#创建的普通用户的个数</span>
+      <span class="token key atrule">Count</span><span class="token punctuation">:</span> <span class="token number">3</span>
+  <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+  <span class="token comment" spellcheck="true"># org_cpp: See "org_go" for full specification</span>
+  <span class="token comment" spellcheck="true"># ---------------------------------------------------------------------------</span>
+  <span class="token punctuation">-</span> <span class="token key atrule">Name</span><span class="token punctuation">:</span> org_cpp
+    <span class="token key atrule">Domain</span><span class="token punctuation">:</span> org_cpp.example.com
+    <span class="token key atrule">EnableNodeOUs</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">Template</span><span class="token punctuation">:</span>
+      <span class="token key atrule">Count</span><span class="token punctuation">:</span> <span class="token number">2</span>
+    <span class="token key atrule">Users</span><span class="token punctuation">:</span>
+      <span class="token key atrule">Count</span><span class="token punctuation">:</span> <span class="token number">1</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="2、根据配置文件生成证书"><a href="#2、根据配置文件生成证书" class="headerlink" title="2、根据配置文件生成证书"></a>2、根据配置文件生成证书</h2><p>cryptogen generate –config=crypto-config.yaml</p>
+<p>生成的文件目录</p>
+<p><code>├── crypto-config │   ├── ordererOrganizations │   │   └── haozai.com │   │       ├── ca │   │       │   ├── b89b91ce9ae9889c846c29a3d17548bb635e54dbcc8fdee18aa7d0053bba85e4_sk │   │       │   └── ca.haozai.com-cert.pem │   │       ├── msp │   │       │   ├── admincerts │   │       │   ├── cacerts │   │       │   │   └── ca.haozai.com-cert.pem │   │       │   ├── config.yaml │   │       │   └── tlscacerts │   │       │       └── tlsca.haozai.com-cert.pem │   │       ├── orderers │   │       │   └── orderer.haozai.com │   │       │       ├── msp │   │       │       │   ├── admincerts │   │       │       │   ├── cacerts │   │       │       │   │   └── ca.haozai.com-cert.pem │   │       │       │   ├── config.yaml │   │       │       │   ├── keystore │   │       │       │   │   └── 52a0f98a1209eca8facb0fe559a575ebb7b9236cae93d518082351e63b029e73_sk │   │       │       │   ├── signcerts │   │       │       │   │   └── orderer.haozai.com-cert.pem │   │       │       │   └── tlscacerts │   │       │       │       └── tlsca.haozai.com-cert.pem │   │       │       └── tls │   │       │           ├── ca.crt │   │       │           ├── server.crt │   │       │           └── server.key │   │       ├── tlsca │   │       │   ├── c05f03756bc2c4d955e6f6103c1755c18cd336af76cc7da62b4f025d9bae2e53_sk │   │       │   └── tlsca.haozai.com-cert.pem │   │       └── users │   │           └── Admin@haozai.com │   │               ├── msp │   │               │   ├── admincerts │   │               │   ├── cacerts │   │               │   │   └── ca.haozai.com-cert.pem │   │               │   ├── config.yaml │   │               │   ├── keystore │   │               │   │   └── bbd7231b43947825a4fd2284005c6aa5d427301cf37b1a4be4a1ef35f693d9fb_sk │   │               │   ├── signcerts │   │               │   │   └── Admin@haozai.com-cert.pem │   │               │   └── tlscacerts │   │               │       └── tlsca.haozai.com-cert.pem │   │               └── tls │   │                   ├── ca.crt │   │                   ├── client.crt │   │                   └── client.key │   └── peerOrganizations │       ├── orgcpp.haozai.com │       │   ├── ca │       │   │   ├── 2a51699bf4d18a363fbdccc9b6d5d77e9df20aa90f08de4a695b6381fec33083_sk │       │   │   └── ca.orgcpp.haozai.com-cert.pem │       │   ├── msp │       │   │   ├── admincerts │       │   │   ├── cacerts │       │   │   │   └── ca.orgcpp.haozai.com-cert.pem │       │   │   ├── config.yaml │       │   │   └── tlscacerts │       │   │       └── tlsca.orgcpp.haozai.com-cert.pem │       │   ├── peers │       │   │   ├── peer0.orgcpp.haozai.com │       │   │   │   ├── msp │       │   │   │   │   ├── admincerts │       │   │   │   │   ├── cacerts │       │   │   │   │   │   └── ca.orgcpp.haozai.com-cert.pem │       │   │   │   │   ├── config.yaml │       │   │   │   │   ├── keystore │       │   │   │   │   │   └── 90fd8ac4de33446c5c4db4ad0a8a43105786cdf0e48eb892ae06a91227fc6f88_sk │       │   │   │   │   ├── signcerts │       │   │   │   │   │   └── peer0.orgcpp.haozai.com-cert.pem │       │   │   │   │   └── tlscacerts │       │   │   │   │       └── tlsca.orgcpp.haozai.com-cert.pem │       │   │   │   └── tls │       │   │   │       ├── ca.crt │       │   │   │       ├── server.crt │       │   │   │       └── server.key │       │   │   └── peer1.orgcpp.haozai.com │       │   │       ├── msp │       │   │       │   ├── admincerts │       │   │       │   ├── cacerts │       │   │       │   │   └── ca.orgcpp.haozai.com-cert.pem │       │   │       │   ├── config.yaml │       │   │       │   ├── keystore │       │   │       │   │   └── 995f06110a794916aae812fba23defef0c7ea1abf6d7be1205a5a70387abf0eb_sk │       │   │       │   ├── signcerts │       │   │       │   │   └── peer1.orgcpp.haozai.com-cert.pem │       │   │       │   └── tlscacerts │       │   │       │       └── tlsca.orgcpp.haozai.com-cert.pem │       │   │       └── tls │       │   │           ├── ca.crt │       │   │           ├── server.crt │       │   │           └── server.key │       │   ├── tlsca │       │   │   ├── 87d5d922c493ad9daf395f19f08585499355441b5fe3f580a3ab3737c3bcd7cb_sk │       │   │   └── tlsca.orgcpp.haozai.com-cert.pem │       │   └── users │       │       ├── Admin@orgcpp.haozai.com │       │       │   ├── msp │       │       │   │   ├── admincerts │       │       │   │   ├── cacerts │       │       │   │   │   └── ca.orgcpp.haozai.com-cert.pem │       │       │   │   ├── config.yaml │       │       │   │   ├── keystore │       │       │   │   │   └── 08fa38edf338be57bb7783596e09e23bde6f63c3ed6882f1a56ba960c2d2cd9d_sk │       │       │   │   ├── signcerts │       │       │   │   │   └── Admin@orgcpp.haozai.com-cert.pem │       │       │   │   └── tlscacerts │       │       │   │       └── tlsca.orgcpp.haozai.com-cert.pem │       │       │   └── tls │       │       │       ├── ca.crt │       │       │       ├── client.crt │       │       │       └── client.key │       │       ├── User1@orgcpp.haozai.com │       │       │   ├── msp │       │       │   │   ├── admincerts │       │       │   │   ├── cacerts │       │       │   │   │   └── ca.orgcpp.haozai.com-cert.pem │       │       │   │   ├── config.yaml │       │       │   │   ├── keystore │       │       │   │   │   └── e2f504b44a6bdc30434152a1e9e9789b984fd06fc038a21875007d7fa9fec4b4_sk │       │       │   │   ├── signcerts │       │       │   │   │   └── User1@orgcpp.haozai.com-cert.pem │       │       │   │   └── tlscacerts │       │       │   │       └── tlsca.orgcpp.haozai.com-cert.pem │       │       │   └── tls │       │       │       ├── ca.crt │       │       │       ├── client.crt │       │       │       └── client.key │       │       ├── User2@orgcpp.haozai.com │       │       │   ├── msp │       │       │   │   ├── admincerts │       │       │   │   ├── cacerts │       │       │   │   │   └── ca.orgcpp.haozai.com-cert.pem │       │       │   │   ├── config.yaml │       │       │   │   ├── keystore │       │       │   │   │   └── f6445f9e7f0fc807783fdc6c3e49bad0a823e7cf75a2e3b6f102432d8475b511_sk │       │       │   │   ├── signcerts │       │       │   │   │   └── User2@orgcpp.haozai.com-cert.pem │       │       │   │   └── tlscacerts │       │       │   │       └── tlsca.orgcpp.haozai.com-cert.pem │       │       │   └── tls │       │       │       ├── ca.crt │       │       │       ├── client.crt │       │       │       └── client.key │       │       └── User3@orgcpp.haozai.com │       │           ├── msp │       │           │   ├── admincerts │       │           │   ├── cacerts │       │           │   │   └── ca.orgcpp.haozai.com-cert.pem │       │           │   ├── config.yaml │       │           │   ├── keystore │       │           │   │   └── 70b9726bf13bd9d1376852c90f447403c79404bcf96def0017865c13bba95027_sk │       │           │   ├── signcerts │       │           │   │   └── User3@orgcpp.haozai.com-cert.pem │       │           │   └── tlscacerts │       │           │       └── tlsca.orgcpp.haozai.com-cert.pem │       │           └── tls │       │               ├── ca.crt │       │               ├── client.crt │       │               └── client.key │       └── orggo.haozai.com │           ├── ca │           │   ├── a8f642edcc9e6c80f856bec3ec6249b7b1f347d80e4ebe02290bbd8c1539b72e_sk │           │   └── ca.orggo.haozai.com-cert.pem │           ├── msp │           │   ├── admincerts │           │   ├── cacerts │           │   │   └── ca.orggo.haozai.com-cert.pem │           │   ├── config.yaml │           │   └── tlscacerts │           │       └── tlsca.orggo.haozai.com-cert.pem │           ├── peers │           │   ├── peer0.orggo.haozai.com │           │   │   ├── msp │           │   │   │   ├── admincerts │           │   │   │   ├── cacerts │           │   │   │   │   └── ca.orggo.haozai.com-cert.pem │           │   │   │   ├── config.yaml │           │   │   │   ├── keystore │           │   │   │   │   └── dbe1daf687e212bf0ae3658d7f44f13d437e0d8680d6c67d0c5cfe35dab8c6db_sk │           │   │   │   ├── signcerts │           │   │   │   │   └── peer0.orggo.haozai.com-cert.pem │           │   │   │   └── tlscacerts │           │   │   │       └── tlsca.orggo.haozai.com-cert.pem │           │   │   └── tls │           │   │       ├── ca.crt │           │   │       ├── server.crt │           │   │       └── server.key │           │   └── peer1.orggo.haozai.com │           │       ├── msp │           │       │   ├── admincerts │           │       │   ├── cacerts │           │       │   │   └── ca.orggo.haozai.com-cert.pem │           │       │   ├── config.yaml │           │       │   ├── keystore │           │       │   │   └── ce2578626295ee912b057bbbb3d2b260e394e4814806c958c918fdcb1d001eef_sk │           │       │   ├── signcerts │           │       │   │   └── peer1.orggo.haozai.com-cert.pem │           │       │   └── tlscacerts │           │       │       └── tlsca.orggo.haozai.com-cert.pem │           │       └── tls │           │           ├── ca.crt │           │           ├── server.crt │           │           └── server.key │           ├── tlsca │           │   ├── 2ef56e9456ffb909c64d4d3e042aeb9f5b400a05c0a1164a6ea545a227aab361_sk │           │   └── tlsca.orggo.haozai.com-cert.pem │           └── users │               ├── Admin@orggo.haozai.com │               │   ├── msp │               │   │   ├── admincerts │               │   │   ├── cacerts │               │   │   │   └── ca.orggo.haozai.com-cert.pem │               │   │   ├── config.yaml │               │   │   ├── keystore │               │   │   │   └── 6f1b6894ed2a8b62e7d2c23850e033eecf14b790654a0cbc9e283d8a6c22d2e6_sk │               │   │   ├── signcerts │               │   │   │   └── Admin@orggo.haozai.com-cert.pem │               │   │   └── tlscacerts │               │   │       └── tlsca.orggo.haozai.com-cert.pem │               │   └── tls │               │       ├── ca.crt │               │       ├── client.crt │               │       └── client.key │               ├── User1@orggo.haozai.com │               │   ├── msp │               │   │   ├── admincerts │               │   │   ├── cacerts │               │   │   │   └── ca.orggo.haozai.com-cert.pem │               │   │   ├── config.yaml │               │   │   ├── keystore │               │   │   │   └── 611f75daa1882ab1ff3e39bdff2625d77a377be05a58441c9da8796170a97fd9_sk │               │   │   ├── signcerts │               │   │   │   └── User1@orggo.haozai.com-cert.pem │               │   │   └── tlscacerts │               │   │       └── tlsca.orggo.haozai.com-cert.pem │               │   └── tls │               │       ├── ca.crt │               │       ├── client.crt │               │       └── client.key │               ├── User2@orggo.haozai.com │               │   ├── msp │               │   │   ├── admincerts │               │   │   ├── cacerts │               │   │   │   └── ca.orggo.haozai.com-cert.pem │               │   │   ├── config.yaml │               │   │   ├── keystore │               │   │   │   └── 7456472b76acd7764efcd97ce010bb5eb6342095b6e4b7ee137c7707683b2b52_sk │               │   │   ├── signcerts │               │   │   │   └── User2@orggo.haozai.com-cert.pem │               │   │   └── tlscacerts │               │   │       └── tlsca.orggo.haozai.com-cert.pem │               │   └── tls │               │       ├── ca.crt │               │       ├── client.crt │               │       └── client.key │               └── User3@orggo.haozai.com │                   ├── msp │                   │   ├── admincerts │                   │   ├── cacerts │                   │   │   └── ca.orggo.haozai.com-cert.pem │                   │   ├── config.yaml │                   │   ├── keystore │                   │   │   └── dd7ddc8b2a6940f69d7515d120192bb4a97db26bc736ff3968bfb4bd83e61c80_sk │                   │   ├── signcerts │                   │   │   └── User3@orggo.haozai.com-cert.pem │                   │   └── tlscacerts │                   │       └── tlsca.orggo.haozai.com-cert.pem │                   └── tls │                       ├── ca.crt │                       ├── client.crt │                       └── client.key └── crypto-config.yaml</code></p>
+<pre><code>账号： 
+    都是谁有msp
+        每一个节点都有一个msp账号
+        每个用户都有msp账号
+</code></pre>
+<h2 id="3、创始快文件和通道文件的生成"><a href="#3、创始快文件和通道文件的生成" class="headerlink" title="3、创始快文件和通道文件的生成"></a>3、创始快文件和通道文件的生成</h2><p>文件名必须为 configtx.yaml</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Copyright IBM Corp. All Rights Reserved.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># SPDX-License-Identifier: Apache-2.0</span>
+<span class="token comment" spellcheck="true">#</span>
+
+<span class="token punctuation">---</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   Section: Organizations</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   - This section defines the different organizational identities which will</span>
+<span class="token comment" spellcheck="true">#   be referenced later in the configuration.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+
+   <span class="token comment" spellcheck="true"># 排序节点组织</span>
+    <span class="token punctuation">-</span> <span class="token important">&amp;OrdererOrg</span>  <span class="token comment" spellcheck="true">#排序节点组织，自己起名字 ，&amp;是为了方便后面引用</span>
+        <span class="token key atrule">Name</span><span class="token punctuation">:</span> OrdererOrg  <span class="token comment" spellcheck="true">#排序节点组织名</span>
+        <span class="token key atrule">ID</span><span class="token punctuation">:</span> OrdererMSP   <span class="token comment" spellcheck="true">#排序节点组织的ID</span>
+
+        <span class="token comment" spellcheck="true"># MSPDir 表示组织的身份的路径MSP路径</span>
+        <span class="token key atrule">MSPDir</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/haozai.com/msp
+
+        <span class="token comment" spellcheck="true"># Policies defines the set of policies at this level of the config tree</span>
+        <span class="token comment" spellcheck="true"># For organization policies, their canonical path is usually</span>
+        <span class="token comment" spellcheck="true">#   /Channel/&lt;Application|Orderer>/&lt;OrgName>/&lt;PolicyName></span>
+        <span class="token key atrule">Policies</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Readers</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Type</span><span class="token punctuation">:</span> Signature
+                <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"OR('OrdererMSP.member')"</span>
+            <span class="token key atrule">Writers</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Type</span><span class="token punctuation">:</span> Signature
+                <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"OR('OrdererMSP.member')"</span>
+            <span class="token key atrule">Admins</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Type</span><span class="token punctuation">:</span> Signature
+                <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"OR('OrdererMSP.admin')"</span>
+
+    <span class="token punctuation">-</span> <span class="token important">&amp;org_go</span>  <span class="token comment" spellcheck="true">#第一个组织，名字自己起</span>
+        <span class="token comment" spellcheck="true"># DefaultOrg defines the organization which is used in the sampleconfig</span>
+        <span class="token comment" spellcheck="true"># of the fabric.git development environment</span>
+        <span class="token key atrule">Name</span><span class="token punctuation">:</span> OrgGoMSP  <span class="token comment" spellcheck="true"># 第一个组织的名字</span>
+
+        <span class="token comment" spellcheck="true"># ID to load the MSP definition as</span>
+        <span class="token key atrule">ID</span><span class="token punctuation">:</span> OrgGoMSP    <span class="token comment" spellcheck="true">#第一个组织的ID</span>
+        <span class="token comment" spellcheck="true">#组织1 的MSP 路径</span>
+        <span class="token key atrule">MSPDir</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/peerOrganizations/orggo.haozai.com/msp
+        <span class="token comment" spellcheck="true">#Policies:</span>
+        <span class="token comment" spellcheck="true">#    Readers:</span>
+         <span class="token comment" spellcheck="true">#       Type: Signature</span>
+        <span class="token comment" spellcheck="true">#        Rule: "OR('org_goMSP.admin', 'org_goMSP.peer', 'org_goMSP.client')"</span>
+        <span class="token comment" spellcheck="true">#    Writers:</span>
+        <span class="token comment" spellcheck="true">#        Type: Signature</span>
+        <span class="token comment" spellcheck="true">#        Rule: "OR('org_goMSP.admin', 'org_goMSP.client')"</span>
+        <span class="token comment" spellcheck="true">#    Admins:</span>
+         <span class="token comment" spellcheck="true">#       Type: Signature</span>
+         <span class="token comment" spellcheck="true">#       Rule: "OR('org_goMSP.admin')"</span>
+
+        <span class="token comment" spellcheck="true"># leave this flag set to true.</span>
+        <span class="token comment" spellcheck="true">#锚节点，</span>
+        <span class="token key atrule">AnchorPeers</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># AnchorPeers defines the location of peers which can be used</span>
+            <span class="token comment" spellcheck="true"># for cross org gossip communication.  Note, this value is only</span>
+            <span class="token comment" spellcheck="true"># encoded in the genesis block in the Application section context</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> peer0.orggo.haozai.com   <span class="token comment" spellcheck="true">#找到该组织的一个peer节点的域名</span>
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7051  </span><span class="token comment" spellcheck="true">#固定端口，不用改</span>
+
+    <span class="token punctuation">-</span> <span class="token important">&amp;org_cpp</span>
+        <span class="token comment" spellcheck="true"># DefaultOrg defines the organization which is used in the sampleconfig</span>
+        <span class="token comment" spellcheck="true"># of the fabric.git development environment</span>
+        <span class="token key atrule">Name</span><span class="token punctuation">:</span> OrgCppMSP
+
+        <span class="token comment" spellcheck="true"># ID to load the MSP definition as</span>
+        <span class="token key atrule">ID</span><span class="token punctuation">:</span> OrgCppMSP
+
+        <span class="token key atrule">MSPDir</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/peerOrganizations/orgcpp.haozai.com/msp
+
+        <span class="token comment" spellcheck="true"># Policies defines the set of policies at this level of the config tree</span>
+        <span class="token comment" spellcheck="true"># For organization policies, their canonical path is usually</span>
+        <span class="token comment" spellcheck="true">#   /Channel/&lt;Application|Orderer>/&lt;OrgName>/&lt;PolicyName></span>
+        <span class="token comment" spellcheck="true">#背书策略</span>
+       <span class="token comment" spellcheck="true"># Policies:</span>
+       <span class="token comment" spellcheck="true">#     Readers:</span>
+        <span class="token comment" spellcheck="true">#        Type: Signature</span>
+      <span class="token comment" spellcheck="true">#          Rule: "OR('org_cppMSP.admin', 'org_cppMSP.peer', 'org_cppMSP.client')"</span>
+      <span class="token comment" spellcheck="true">#      Writers:</span>
+      <span class="token comment" spellcheck="true">#          Type: Signature</span>
+      <span class="token comment" spellcheck="true">#          Rule: "OR('org_cppMSP.admin', 'org_cppMSP.client')"</span>
+      <span class="token comment" spellcheck="true">#      Admins:</span>
+       <span class="token comment" spellcheck="true">#         Type: Signature</span>
+        <span class="token comment" spellcheck="true">#        Rule: "OR('org_cppMSP.admin')"</span>
+
+        <span class="token key atrule">AnchorPeers</span><span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># AnchorPeers defines the location of peers which can be used</span>
+            <span class="token comment" spellcheck="true"># for cross org gossip communication.  Note, this value is only</span>
+            <span class="token comment" spellcheck="true"># encoded in the genesis block in the Application section context</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> peer0.orgcpp.haozai.com
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">9051 </span><span class="token comment" spellcheck="true"># 固定端口，不修改</span>
+
+ <span class="token comment" spellcheck="true">#zai fabric1.1之前没有 ， 设置的时候全部设置未true</span>
+<span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># Channel capabilities apply to both the orderers and the peers and must be</span>
+    <span class="token comment" spellcheck="true"># supported by both.</span>
+    <span class="token comment" spellcheck="true"># Set the value of the capability to true to require it.</span>
+    <span class="token key atrule">Channel</span><span class="token punctuation">:</span> <span class="token important">&amp;ChannelCapabilities</span>
+       
+        <span class="token key atrule">V1_4_3</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+        <span class="token comment" spellcheck="true"># V1.3 for Channel enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.3</span>
+        <span class="token key atrule">V1_3</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+        <span class="token comment" spellcheck="true"># V1.1 for Channel enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.1</span>
+        <span class="token key atrule">V1_1</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+    <span class="token comment" spellcheck="true"># Orderer capabilities apply only to the orderers, and may be safely</span>
+    <span class="token comment" spellcheck="true"># used with prior release peers.</span>
+    <span class="token comment" spellcheck="true"># Set the value of the capability to true to require it.</span>
+    <span class="token key atrule">Orderer</span><span class="token punctuation">:</span> <span class="token important">&amp;OrdererCapabilities</span>
+        <span class="token comment" spellcheck="true"># V1.4.2 for Orderer is a catchall flag for behavior which has been</span>
+        <span class="token comment" spellcheck="true"># determined to be desired for all orderers running at the v1.4.2</span>
+        <span class="token comment" spellcheck="true"># level, but which would be incompatible with orderers from prior releases.</span>
+        <span class="token comment" spellcheck="true"># Prior to enabling V1.4.2 orderer capabilities, ensure that all</span>
+        <span class="token comment" spellcheck="true"># orderers on a channel are at v1.4.2 or later.</span>
+        <span class="token key atrule">V1_4_2</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+        <span class="token comment" spellcheck="true"># V1.1 for Orderer enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.1</span>
+        <span class="token key atrule">V1_1</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+    <span class="token comment" spellcheck="true"># Application capabilities apply only to the peer network, and may be safely</span>
+    <span class="token comment" spellcheck="true"># used with prior release orderers.</span>
+    <span class="token comment" spellcheck="true"># Set the value of the capability to true to require it.</span>
+    
+    <span class="token comment" spellcheck="true">#默认配置</span>
+    <span class="token key atrule">Application</span><span class="token punctuation">:</span> <span class="token important">&amp;ApplicationCapabilities</span>
+        <span class="token comment" spellcheck="true"># V1.4.2 for Application enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.4.2.</span>
+        <span class="token key atrule">V1_4_2</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+        <span class="token comment" spellcheck="true"># V1.3 for Application enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.3.</span>
+        <span class="token key atrule">V1_3</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+        <span class="token comment" spellcheck="true"># V1.2 for Application enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.2 (note, this need not be set if</span>
+        <span class="token comment" spellcheck="true"># later version capabilities are set)</span>
+        <span class="token key atrule">V1_2</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+        <span class="token comment" spellcheck="true"># V1.1 for Application enables the new non-backwards compatible</span>
+        <span class="token comment" spellcheck="true"># features and fixes of fabric v1.1 (note, this need not be set if</span>
+        <span class="token comment" spellcheck="true"># later version capabilities are set).</span>
+        <span class="token key atrule">V1_1</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   SECTION: Application</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   - This section defines the values to encode into a config transaction or</span>
+<span class="token comment" spellcheck="true">#   genesis block for application related parameters</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token key atrule">Application</span><span class="token punctuation">:</span> <span class="token important">&amp;ApplicationDefaults</span>
+
+    <span class="token comment" spellcheck="true"># Organizations is the list of orgs which are defined as participants on</span>
+    <span class="token comment" spellcheck="true"># the application side of the network</span>
+    <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+
+    <span class="token comment" spellcheck="true"># Policies defines the set of policies at this level of the config tree</span>
+    <span class="token comment" spellcheck="true"># For Application policies, their canonical path is</span>
+    <span class="token comment" spellcheck="true">#   /Channel/Application/&lt;PolicyName></span>
+    <span class="token key atrule">Policies</span><span class="token punctuation">:</span>
+        <span class="token key atrule">Readers</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Readers"</span>
+        <span class="token key atrule">Writers</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Writers"</span>
+        <span class="token key atrule">Admins</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"MAJORITY Admins"</span>
+
+    <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+        <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ApplicationCapabilities</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   SECTION: Orderer</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   - This section defines the values to encode into a config transaction or</span>
+<span class="token comment" spellcheck="true">#   genesis block for orderer related parameters</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+
+<span class="token key atrule">Orderer</span><span class="token punctuation">:</span> <span class="token important">&amp;OrdererDefaults</span>
+
+    <span class="token comment" spellcheck="true"># Orderer Type: The orderer implementation to start</span>
+    <span class="token comment" spellcheck="true"># Available types are "solo","kafka"  and "etcdraft"</span>
+    <span class="token key atrule">OrdererType</span><span class="token punctuation">:</span> solo   <span class="token comment" spellcheck="true">#排序算法 （共识机制） Kafkar中order节点需要集群</span>
+
+    <span class="token key atrule">Addresses</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#orerder节点的地址 ， 7050端口（不要改）</span>
+        <span class="token punctuation">-</span> orderer.haozai.com<span class="token punctuation">:</span><span class="token number">7050</span>
+
+    <span class="token comment" spellcheck="true"># Batch Timeout: The amount of time to wait before creating a batch</span>
+    <span class="token key atrule">BatchTimeout</span><span class="token punctuation">:</span> 2s  <span class="token comment" spellcheck="true"># 多久产生一个区块 ，2s一个区块</span>
+
+    <span class="token comment" spellcheck="true"># Batch Size: Controls the number of messages batched into a block</span>
+    <span class="token key atrule">BatchSize</span><span class="token punctuation">:</span>
+
+        <span class="token comment" spellcheck="true"># Max Message Count: The maximum number of messages to permit in a batch</span>
+        <span class="token key atrule">MaxMessageCount</span><span class="token punctuation">:</span> <span class="token number">100  </span><span class="token comment" spellcheck="true">#交易的最大条数 ，10条交易产生一个区块</span>
+
+        <span class="token comment" spellcheck="true"># Absolute Max Bytes: The absolute maximum number of bytes allowed for</span>
+        <span class="token comment" spellcheck="true"># the serialized messages in a batch.</span>
+        <span class="token key atrule">AbsoluteMaxBytes</span><span class="token punctuation">:</span> 64 MB  <span class="token comment" spellcheck="true">#交易大小达到99MB，产生一个区块</span>
+
+        <span class="token comment" spellcheck="true"># Preferred Max Bytes: The preferred maximum number of bytes allowed for</span>
+        <span class="token comment" spellcheck="true"># the serialized messages in a batch. A message larger than the preferred</span>
+        <span class="token comment" spellcheck="true"># max bytes will result in a batch larger than preferred max bytes.</span>
+        <span class="token key atrule">PreferredMaxBytes</span><span class="token punctuation">:</span> 512 KB <span class="token comment" spellcheck="true">#交易的数值 ，（不需要修改）</span>
+
+    <span class="token key atrule">Kafka</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Brokers: A list of Kafka brokers to which the orderer connects</span>
+        <span class="token comment" spellcheck="true"># NOTE: Use IP:port notation</span>
+        <span class="token key atrule">Brokers</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#代理人，Kafka的服务器</span>
+            <span class="token punctuation">-</span> 127.0.0.1<span class="token punctuation">:</span><span class="token number">9092</span>
+
+    <span class="token comment" spellcheck="true"># EtcdRaft defines configuration which must be set when the "etcdraft"</span>
+    <span class="token comment" spellcheck="true"># orderertype is chosen.</span>
+    <span class="token key atrule">EtcdRaft</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># The set of Raft replicas for this network. For the etcd/raft-based</span>
+        <span class="token comment" spellcheck="true"># implementation, we expect every replica to also be an OSN. Therefore,</span>
+        <span class="token comment" spellcheck="true"># a subset of the host:port items enumerated in this list should be</span>
+        <span class="token comment" spellcheck="true"># replicated under the Orderer.Addresses key above.</span>
+        <span class="token key atrule">Consenters</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer.example.com
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+              <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+              <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer2.example.com
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+              <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
+              <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer3.example.com
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+              <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
+              <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer4.example.com
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+              <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer4.example.com/tls/server.crt
+              <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer4.example.com/tls/server.crt
+            <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer5.example.com
+              <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+              <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer5.example.com/tls/server.crt
+              <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer5.example.com/tls/server.crt
+
+    <span class="token comment" spellcheck="true"># Organizations is the list of orgs which are defined as participants on</span>
+    <span class="token comment" spellcheck="true"># the orderer side of the network</span>
+    <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+
+    <span class="token comment" spellcheck="true"># Policies defines the set of policies at this level of the config tree</span>
+    <span class="token comment" spellcheck="true"># For Orderer policies, their canonical path is</span>
+    <span class="token comment" spellcheck="true">#   /Channel/Orderer/&lt;PolicyName></span>
+    <span class="token key atrule">Policies</span><span class="token punctuation">:</span>
+        <span class="token key atrule">Readers</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Readers"</span>
+        <span class="token key atrule">Writers</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Writers"</span>
+        <span class="token key atrule">Admins</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"MAJORITY Admins"</span>
+        <span class="token comment" spellcheck="true"># BlockValidation specifies what signatures must be included in the block</span>
+        <span class="token comment" spellcheck="true"># from the orderer for the peer to validate it.</span>
+        <span class="token key atrule">BlockValidation</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Writers"</span>
+
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   CHANNEL</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   This section defines the values to encode into a config transaction or</span>
+<span class="token comment" spellcheck="true">#   genesis block for channel related parameters.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token key atrule">Channel</span><span class="token punctuation">:</span> <span class="token important">&amp;ChannelDefaults</span>
+    <span class="token comment" spellcheck="true"># Policies defines the set of policies at this level of the config tree</span>
+    <span class="token comment" spellcheck="true"># For Channel policies, their canonical path is</span>
+    <span class="token comment" spellcheck="true">#   /Channel/&lt;PolicyName></span>
+    <span class="token key atrule">Policies</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true"># Who may invoke the 'Deliver' API</span>
+        <span class="token key atrule">Readers</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Readers"</span>
+        <span class="token comment" spellcheck="true"># Who may invoke the 'Broadcast' API</span>
+        <span class="token key atrule">Writers</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"ANY Writers"</span>
+        <span class="token comment" spellcheck="true"># By default, who may modify elements at this config level</span>
+        <span class="token key atrule">Admins</span><span class="token punctuation">:</span>
+            <span class="token key atrule">Type</span><span class="token punctuation">:</span> ImplicitMeta
+            <span class="token key atrule">Rule</span><span class="token punctuation">:</span> <span class="token string">"MAJORITY Admins"</span>
+
+    <span class="token comment" spellcheck="true"># Capabilities describes the channel level capabilities, see the</span>
+    <span class="token comment" spellcheck="true"># dedicated Capabilities section elsewhere in this file for a full</span>
+    <span class="token comment" spellcheck="true"># description</span>
+    <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+        <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelCapabilities</span>
+
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   Profile</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#   - Different configuration profiles may be encoded here to be specified</span>
+<span class="token comment" spellcheck="true">#   as parameters to the configtxgen tool</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">################################################################################</span>
+<span class="token key atrule">Profiles</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#不修改 </span>
+    
+    <span class="token comment" spellcheck="true">#区块的名字</span>
+    <span class="token key atrule">HaozaiOrgsOrdererGenesis</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#区块名字，随便改</span>
+        <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelDefaults</span> 
+        <span class="token key atrule">Orderer</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererDefaults</span>
+            <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> <span class="token important">*OrdererOrg</span>
+            <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+                <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererCapabilities</span>
+        <span class="token key atrule">Consortiums</span><span class="token punctuation">:</span>
+            <span class="token key atrule">SampleConsortium</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#可以改 TEST1</span>
+                <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+                    <span class="token punctuation">-</span> <span class="token important">*org_go</span>
+                    <span class="token punctuation">-</span> <span class="token important">*org_cpp</span>
+     
+    <span class="token comment" spellcheck="true"># 通道的名字</span>
+    <span class="token key atrule">HaozaiOrgsChannel</span><span class="token punctuation">:</span>   <span class="token comment" spellcheck="true">#通道名字，可以改</span>
+        <span class="token key atrule">Consortium</span><span class="token punctuation">:</span> SampleConsortium  <span class="token comment" spellcheck="true">#要和TEST1对应</span>
+        <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelDefaults</span>
+        <span class="token key atrule">Application</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ApplicationDefaults</span>
+            <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> <span class="token important">*org_go</span>  <span class="token comment" spellcheck="true">#属于这个通道</span>
+                <span class="token punctuation">-</span> <span class="token important">*org_cpp</span>  <span class="token comment" spellcheck="true">#属于当前的通道</span>
+            <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+                <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ApplicationCapabilities</span>
+
+    <span class="token key atrule">SampleDevModeKafka</span><span class="token punctuation">:</span>
+        <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelDefaults</span>
+        <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelCapabilities</span>
+        <span class="token key atrule">Orderer</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererDefaults</span>
+            <span class="token key atrule">OrdererType</span><span class="token punctuation">:</span> kafka
+            <span class="token key atrule">Kafka</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Brokers</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> kafka.example.com<span class="token punctuation">:</span><span class="token number">9092</span>
+
+            <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token important">*OrdererOrg</span>
+            <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+                <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererCapabilities</span>
+        <span class="token key atrule">Application</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ApplicationDefaults</span>
+            <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererOrg</span>
+        <span class="token key atrule">Consortiums</span><span class="token punctuation">:</span>
+            <span class="token key atrule">SampleConsortium</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> <span class="token important">*org_go</span>
+                <span class="token punctuation">-</span> <span class="token important">*org_cpp</span>
+
+    <span class="token key atrule">SampleMultiNodeEtcdRaft</span><span class="token punctuation">:</span>
+        <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelDefaults</span>
+        <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ChannelCapabilities</span>
+        <span class="token key atrule">Orderer</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererDefaults</span>
+            <span class="token key atrule">OrdererType</span><span class="token punctuation">:</span> etcdraft
+            <span class="token key atrule">EtcdRaft</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Consenters</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer.example.com
+                  <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+                  <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+                  <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/server.crt
+                <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer2.example.com
+                  <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+                  <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
+                  <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer2.example.com/tls/server.crt
+                <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer3.example.com
+                  <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+                  <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
+                  <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer3.example.com/tls/server.crt
+                <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer4.example.com
+                  <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+                  <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer4.example.com/tls/server.crt
+                  <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer4.example.com/tls/server.crt
+                <span class="token punctuation">-</span> <span class="token key atrule">Host</span><span class="token punctuation">:</span> orderer5.example.com
+                  <span class="token key atrule">Port</span><span class="token punctuation">:</span> <span class="token number">7050</span>
+                  <span class="token key atrule">ClientTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer5.example.com/tls/server.crt
+                  <span class="token key atrule">ServerTLSCert</span><span class="token punctuation">:</span> crypto<span class="token punctuation">-</span>config/ordererOrganizations/example.com/orderers/orderer5.example.com/tls/server.crt
+            <span class="token key atrule">Addresses</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> orderer.example.com<span class="token punctuation">:</span><span class="token number">7050</span>
+                <span class="token punctuation">-</span> orderer2.example.com<span class="token punctuation">:</span><span class="token number">7050</span>
+                <span class="token punctuation">-</span> orderer3.example.com<span class="token punctuation">:</span><span class="token number">7050</span>
+                <span class="token punctuation">-</span> orderer4.example.com<span class="token punctuation">:</span><span class="token number">7050</span>
+                <span class="token punctuation">-</span> orderer5.example.com<span class="token punctuation">:</span><span class="token number">7050</span>
+
+            <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token important">*OrdererOrg</span>
+            <span class="token key atrule">Capabilities</span><span class="token punctuation">:</span>
+                <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererCapabilities</span>
+        <span class="token key atrule">Application</span><span class="token punctuation">:</span>
+            <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*ApplicationDefaults</span>
+            <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+            <span class="token punctuation">-</span> <span class="token key atrule">&lt;&lt;</span><span class="token punctuation">:</span> <span class="token important">*OrdererOrg</span>
+        <span class="token key atrule">Consortiums</span><span class="token punctuation">:</span>
+            <span class="token key atrule">SampleConsortium</span><span class="token punctuation">:</span>
+                <span class="token key atrule">Organizations</span><span class="token punctuation">:</span>
+                <span class="token punctuation">-</span> <span class="token important">*org_go</span>
+                <span class="token punctuation">-</span> <span class="token important">*org_cpp</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>锚节点 ，负责和组织间通信的节点。</p>
+<h3 id="使用命令生成创世块"><a href="#使用命令生成创世块" class="headerlink" title="使用命令生成创世块"></a>使用命令生成创世块</h3><pre class="line-numbers language-shell"><code class="language-shell">configtxgen -profile foodGenesis -outputBlock ./genesis.block
+
+#HaozaiOrgsOrdererGenesis 配置文件中区块的名字 ， 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>把genesis.block放到特定的目录  channel-artifacts</p>
+<h3 id="使用命令生成通道文件"><a href="#使用命令生成通道文件" class="headerlink" title="使用命令生成通道文件"></a>使用命令生成通道文件</h3><pre class="line-numbers language-shell"><code class="language-shell">configtxgen -profile HaozaiOrgsChannel -outputCreateChannelTx test.tx -channelID haozaichannel
+
+configtxgen -profile foodchannel -outputCreateChannelTx test.tx -channelID foodfchannel
+
+configtxgen -profile foodchannel -outputCreateChannelTx testSDK.tx -channelID foodfchannel
+
+#HaozaiOrgsChannel 是通道的名字
+#channel.tx 通道名字
+#haozaichannel 通道的id
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="生成锚节点的更新文件（可选）"><a href="#生成锚节点的更新文件（可选）" class="headerlink" title="生成锚节点的更新文件（可选）"></a>生成锚节点的更新文件（可选）</h3><pre class="line-numbers language-shell"><code class="language-shell">configtxgen -profile HaozaiOrgsChannel -outputAnchorPeersUpdate GOMSPanchors.tx -channelID haozaichannel -asOrg OrgGoMSP
+
+#GOMSPanchors.tx 锚节点文件名字
+#当前锚节点属于haozaichannel通道，若没有指定，则默认未mychannel
+
+#当前组织是OrgGoMSP
+#生成锚节点更新文件
+configtxgen -profile HaozaiOrgsChannel -outputAnchorPeersUpdate CPPMSPanchors.tx -channelID haozaichannel -asOrg OrgCppMSP
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>每个组织对应一个锚节点的更新文件</p>
+<h2 id="4、docker-compose文件的编写"><a href="#4、docker-compose文件的编写" class="headerlink" title="4、docker-compose文件的编写"></a>4、docker-compose文件的编写</h2><h3 id="docker-compose-cli"><a href="#docker-compose-cli" class="headerlink" title="docker-compose-cli"></a>docker-compose-cli</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Copyright IBM Corp. All Rights Reserved.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># SPDX-License-Identifier: Apache-2.0</span>
+<span class="token comment" spellcheck="true">#</span>
+
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'2'</span>  <span class="token comment" spellcheck="true">#docker-compose版本</span>
+
+<span class="token comment" spellcheck="true">#docker镜像映射到本地，</span>
+<span class="token comment" spellcheck="true"># /var/lib/docker/volumes/ orderer.example.com</span>
+<span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">orderer.food.com</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">peer0.org1.food.com</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">peer0.org2.food.com</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">peer0.org3.food.com</span><span class="token punctuation">:</span>
+   <span class="token punctuation">-</span> <span class="token key atrule">peer0.org4.food.com</span><span class="token punctuation">:</span>
+
+<span class="token comment" spellcheck="true">#把所有docker放到同一个网络中</span>
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">byfn</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">orderer.food.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#继承属性</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span>   base/docker<span class="token punctuation">-</span>compose<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> orderer.food.com
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> orderer.food.com <span class="token comment" spellcheck="true"># 容器的名字，一般用域名</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn  <span class="token comment" spellcheck="true">#在byfn网络中</span>
+
+  <span class="token key atrule">peer0.org1.food.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> peer0.org1.food.com  <span class="token comment" spellcheck="true">#容器名字 ，一般用域名</span>
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span>  base/docker<span class="token punctuation">-</span>compose<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span>  peer0.org1.food.com
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn  <span class="token comment" spellcheck="true">#在byfn网络中</span>
+
+  <span class="token key atrule">peer0.org2.haozai.com:</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> <span class="token key atrule">peer1.orggo.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span>  base/docker<span class="token punctuation">-</span>compose<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> <span class="token key atrule">peer1.orggo.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+
+  <span class="token key atrule">peer0.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> <span class="token key atrule">peer0.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span>  base/docker<span class="token punctuation">-</span>compose<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> <span class="token key atrule">peer0.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+
+  <span class="token key atrule">peer1.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> <span class="token key atrule">peer1.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span>  base/docker<span class="token punctuation">-</span>compose<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> <span class="token key atrule">peer1.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+  <span class="token comment" spellcheck="true">#客户端终端，Linux终端</span>
+  <span class="token key atrule">cli</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> cli
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>tools<span class="token punctuation">:</span>latest
+    <span class="token key atrule">tty</span><span class="token punctuation">:</span> <span class="token boolean important">true  </span><span class="token comment" spellcheck="true">#终端 ，有</span>
+    <span class="token key atrule">stdin_open</span><span class="token punctuation">:</span> <span class="token boolean important">true </span><span class="token comment" spellcheck="true">#标准输入打开</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#环境变量</span>
+      <span class="token punctuation">-</span> SYS_CHANNEL=haozaichannel
+      <span class="token punctuation">-</span> GOPATH=/opt/gopath
+      <span class="token punctuation">-</span> CORE_VM_ENDPOINT=unix<span class="token punctuation">:</span>///host/var/run/docker.sock
+      <span class="token comment" spellcheck="true">#- FABRIC_LOGGING_SPEC=DEBUG</span>
+      <span class="token punctuation">-</span> FABRIC_LOGGING_SPEC=INFO
+      <span class="token punctuation">-</span> CORE_PEER_ID=cli   <span class="token comment" spellcheck="true">#客户端ID</span>
+      <span class="token punctuation">-</span> CORE_PEER_ADDRESS=peer0.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">7051 </span><span class="token comment" spellcheck="true">#客户端要连接的Peer节点地址</span>
+      <span class="token punctuation">-</span> CORE_PEER_LOCALMSPID=OrgGoMSP  <span class="token comment" spellcheck="true">#连接的Peer节点地址对应的ID</span>
+      <span class="token punctuation">-</span> CORE_PEER_TLS_ENABLED=true
+      <span class="token punctuation">-</span> CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls/server.crt
+      <span class="token punctuation">-</span> CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls/server.key
+      <span class="token punctuation">-</span> CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls/ca.crt
+      <span class="token punctuation">-</span> CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/users/Admin@orggo.haozai.com/msp
+    <span class="token key atrule">working_dir</span><span class="token punctuation">:</span> /opt/gopath/src/github.com/hyperledger/fabric/peer <span class="token comment" spellcheck="true">#工作目录</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> /bin/bash  <span class="token comment" spellcheck="true">#执行的命令</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span> <span class="token comment" spellcheck="true">#卷的挂载</span>
+        <span class="token punctuation">-</span> /var/run/<span class="token punctuation">:</span>/host/var/run/  <span class="token comment" spellcheck="true">#映射</span>
+        <span class="token punctuation">-</span> ./chaincode/<span class="token punctuation">:</span>/opt/gopath/src/github.com/chaincode   <span class="token comment" spellcheck="true">#链码目录</span>
+        <span class="token punctuation">-</span> ./crypto<span class="token punctuation">-</span>config<span class="token punctuation">:</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/  <span class="token comment" spellcheck="true">#证书</span>
+        <span class="token comment" spellcheck="true">#- ./scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/  #脚本</span>
+        <span class="token punctuation">-</span> ./channel<span class="token punctuation">-</span>artifacts<span class="token punctuation">:</span>/opt/gopath/src/github.com/hyperledger/fabric/peer/channel<span class="token punctuation">-</span>artifacts <span class="token comment" spellcheck="true">#之前生成的文件</span>
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#规定服务的启动顺序</span>
+      <span class="token punctuation">-</span> orderer.haozai.com
+      <span class="token punctuation">-</span> peer0.orggo.haozai.com
+      <span class="token punctuation">-</span> peer1.orggo.haozai.com
+      <span class="token punctuation">-</span> peer0.orgcpp.haozai.com
+      <span class="token punctuation">-</span> peer1.orgcpp.haozai.com
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="docker-compose-base-yaml"><a href="#docker-compose-base-yaml" class="headerlink" title="docker-compose-base.yaml"></a>docker-compose-base.yaml</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Copyright IBM Corp. All Rights Reserved.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># SPDX-License-Identifier: Apache-2.0</span>
+<span class="token comment" spellcheck="true">#</span>
+
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'2'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+
+  <span class="token key atrule">orderer.haozai.com</span><span class="token punctuation">:</span>  <span class="token comment" spellcheck="true">#排序节点服务 和docker-compose-cli 中的  service: orderer.example.com 对应</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> orderer.haozai.com
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> orderer<span class="token punctuation">-</span>base  <span class="token comment" spellcheck="true">#镜像在peer-base中</span>
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> ../channel<span class="token punctuation">-</span>artifacts/genesis.block<span class="token punctuation">:</span>/var/hyperledger/orderer/orderer.genesis.block
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/ordererOrganizations/haozai.com/orderers/orderer.haozai.com/msp<span class="token punctuation">:</span>/var/hyperledger/orderer/msp
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/ordererOrganizations/haozai.com/orderers/orderer.haozai.com/tls/<span class="token punctuation">:</span>/var/hyperledger/orderer/tls
+        <span class="token punctuation">-</span> orderer.haozai.com<span class="token punctuation">:</span>/var/hyperledger/production/orderer
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 7050<span class="token punctuation">:</span><span class="token number">7050</span>
+
+  <span class="token key atrule">peer0.orggo.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> peer0.orggo.haozai.com
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_PEER_ID=peer0.orggo.haozai.com
+      <span class="token punctuation">-</span> CORE_PEER_ADDRESS=peer0.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">7051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">7051</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODEADDRESS=peer0.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">7052</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">7052</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_BOOTSTRAP=peer0.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">7051</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">7051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LOCALMSPID=OrgGoMSP
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> /var/run/<span class="token punctuation">:</span>/host/var/run/
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/msp<span class="token punctuation">:</span>/etc/hyperledger/fabric/msp
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls<span class="token punctuation">:</span>/etc/hyperledger/fabric/tls
+        <span class="token punctuation">-</span> peer0.orggo.haozai.com<span class="token punctuation">:</span>/var/hyperledger/production
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 7051<span class="token punctuation">:</span><span class="token number">7051</span>
+      <span class="token punctuation">-</span> 7052<span class="token punctuation">:</span><span class="token number">7052</span>
+
+  <span class="token key atrule">peer1.orggo.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> peer1.orggo.haozai.com
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_PEER_ID=peer1.orggo.haozai.com
+      <span class="token punctuation">-</span> CORE_PEER_ADDRESS=peer1.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">8051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">8051</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODEADDRESS=peer1.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">8052</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">8052</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">8051</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_BOOTSTRAP=peer1.orggo.haozai.com<span class="token punctuation">:</span><span class="token number">8051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LOCALMSPID=OrgGoMSP
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> /var/run/<span class="token punctuation">:</span>/host/var/run/
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orggo.haozai.com/peers/peer1.orggo.haozai.com/msp<span class="token punctuation">:</span>/etc/hyperledger/fabric/msp
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orggo.haozai.com/peers/peer1.orggo.haozai.com/tls<span class="token punctuation">:</span>/etc/hyperledger/fabric/tls
+        <span class="token punctuation">-</span> peer1.orggo.haozai.com<span class="token punctuation">:</span>/var/hyperledger/production
+
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 8051<span class="token punctuation">:</span><span class="token number">8051</span>
+      <span class="token punctuation">-</span> 8052<span class="token punctuation">:</span><span class="token number">8052</span>
+
+  <span class="token key atrule">peer0.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> peer0.orgcpp.haozai.com
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>  
+      <span class="token key atrule">file</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_PEER_ID=peer0.orgcpp.haozai.com
+      <span class="token punctuation">-</span> CORE_PEER_ADDRESS=peer0.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">9051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">9051</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODEADDRESS=peer0.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">9052</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">9052</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">9051</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_BOOTSTRAP=peer0.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">9051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LOCALMSPID=OrgCppMSP
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> /var/run/<span class="token punctuation">:</span>/host/var/run/
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orgcpp.haozai.com/peers/peer0.orgcpp.haozai.com/msp<span class="token punctuation">:</span>/etc/hyperledger/fabric/msp
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orgcpp.haozai.com/peers/peer0.orgcpp.haozai.com/tls<span class="token punctuation">:</span>/etc/hyperledger/fabric/tls
+        <span class="token punctuation">-</span> peer0.orgcpp.haozai.com<span class="token punctuation">:</span>/var/hyperledger/production
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 9051<span class="token punctuation">:</span><span class="token number">9051</span>
+      <span class="token punctuation">-</span> 9052<span class="token punctuation">:</span><span class="token number">9052</span>
+
+  <span class="token key atrule">peer1.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> peer1.orgcpp.haozai.com
+    <span class="token key atrule">extends</span><span class="token punctuation">:</span>
+      <span class="token key atrule">file</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base.yaml
+      <span class="token key atrule">service</span><span class="token punctuation">:</span> peer<span class="token punctuation">-</span>base
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_PEER_ID=peer1.orgcpp.haozai.com
+      <span class="token punctuation">-</span> CORE_PEER_ADDRESS=peer1.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">10051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">10051</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODEADDRESS=peer1.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">10052</span>
+      <span class="token punctuation">-</span> CORE_PEER_CHAINCODELISTENADDRESS=0.0.0.0<span class="token punctuation">:</span><span class="token number">10052</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">10051</span>
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_BOOTSTRAP=peer1.orgcpp.haozai.com<span class="token punctuation">:</span><span class="token number">10051</span>
+      <span class="token punctuation">-</span> CORE_PEER_LOCALMSPID=OrgCppMSP
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+        <span class="token punctuation">-</span> /var/run/<span class="token punctuation">:</span>/host/var/run/
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orgcpp.haozai.com/peers/peer1.orgcpp.haozai.com/msp<span class="token punctuation">:</span>/etc/hyperledger/fabric/msp
+        <span class="token punctuation">-</span> ../crypto<span class="token punctuation">-</span>config/peerOrganizations/orgcpp.haozai.com/peers/peer1.orgcpp.haozai.com/tls<span class="token punctuation">:</span>/etc/hyperledger/fabric/tls
+        <span class="token punctuation">-</span> peer1.org2.example.com<span class="token punctuation">:</span>/var/hyperledger/production
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> 10051<span class="token punctuation">:</span><span class="token number">10051</span>
+      <span class="token punctuation">-</span> 10052<span class="token punctuation">:</span><span class="token number">10052</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="peer-base-yaml"><a href="#peer-base-yaml" class="headerlink" title="peer-base.yaml"></a>peer-base.yaml</h3><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Copyright IBM Corp. All Rights Reserved.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># SPDX-License-Identifier: Apache-2.0</span>
+<span class="token comment" spellcheck="true">#</span>
+
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'2'</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">peer-base</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>peer<span class="token punctuation">:</span>latest 
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_VM_ENDPOINT=unix<span class="token punctuation">:</span>///host/var/run/docker.sock
+      <span class="token comment" spellcheck="true"># the following setting starts chaincode containers on the same</span>
+      <span class="token comment" spellcheck="true"># bridge network as the peers</span>
+      <span class="token comment" spellcheck="true"># https://docs.docker.com/compose/networking/</span>
+      <span class="token punctuation">-</span> CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=haozai_byfn
+      <span class="token punctuation">-</span> FABRIC_LOGGING_SPEC=INFO
+      <span class="token comment" spellcheck="true">#- FABRIC_LOGGING_SPEC=DEBUG</span>
+      <span class="token punctuation">-</span> CORE_PEER_TLS_ENABLED=true
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_USELEADERELECTION=true
+      <span class="token punctuation">-</span> CORE_PEER_GOSSIP_ORGLEADER=false
+      <span class="token punctuation">-</span> CORE_PEER_PROFILE_ENABLED=true
+      <span class="token punctuation">-</span> CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt
+      <span class="token punctuation">-</span> CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key
+      <span class="token punctuation">-</span> CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt
+    <span class="token key atrule">working_dir</span><span class="token punctuation">:</span> /opt/gopath/src/github.com/hyperledger/fabric/peer
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> peer node start
+
+  <span class="token key atrule">orderer-base</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>orderer<span class="token punctuation">:</span>latest
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> FABRIC_LOGGING_SPEC=INFO
+      <span class="token punctuation">-</span> ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
+      <span class="token punctuation">-</span> ORDERER_GENERAL_GENESISMETHOD=file
+      <span class="token punctuation">-</span> ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
+      <span class="token punctuation">-</span> ORDERER_GENERAL_LOCALMSPID=OrdererMSP
+      <span class="token punctuation">-</span> ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp
+      <span class="token comment" spellcheck="true"># enabled TLS</span>
+      <span class="token punctuation">-</span> ORDERER_GENERAL_TLS_ENABLED=true
+      <span class="token punctuation">-</span> ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      <span class="token punctuation">-</span> ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      <span class="token punctuation">-</span> ORDERER_GENERAL_TLS_ROOTCAS=<span class="token punctuation">[</span>/var/hyperledger/orderer/tls/ca.crt<span class="token punctuation">]</span>
+      <span class="token punctuation">-</span> ORDERER_KAFKA_TOPIC_REPLICATIONFACTOR=1
+      <span class="token punctuation">-</span> ORDERER_KAFKA_VERBOSE=true
+      <span class="token punctuation">-</span> ORDERER_GENERAL_CLUSTER_CLIENTCERTIFICATE=/var/hyperledger/orderer/tls/server.crt
+      <span class="token punctuation">-</span> ORDERER_GENERAL_CLUSTER_CLIENTPRIVATEKEY=/var/hyperledger/orderer/tls/server.key
+      <span class="token punctuation">-</span> ORDERER_GENERAL_CLUSTER_ROOTCAS=<span class="token punctuation">[</span>/var/hyperledger/orderer/tls/ca.crt<span class="token punctuation">]</span>
+    <span class="token key atrule">working_dir</span><span class="token punctuation">:</span> /opt/gopath/src/github.com/hyperledger/fabric
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> orderer
+    
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="使用couch-DB数据库"><a href="#使用couch-DB数据库" class="headerlink" title="使用couch DB数据库"></a>使用couch DB数据库</h2><pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># Copyright IBM Corp. All Rights Reserved.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># SPDX-License-Identifier: Apache-2.0</span>
+<span class="token comment" spellcheck="true">#</span>
+
+<span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token string">'2'</span>
+
+<span class="token key atrule">networks</span><span class="token punctuation">:</span>
+  <span class="token key atrule">byfn</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">services</span><span class="token punctuation">:</span>
+  <span class="token key atrule">couchdb0</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> couchdb0
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>couchdb
+    <span class="token comment" spellcheck="true"># Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password</span>
+    <span class="token comment" spellcheck="true"># for CouchDB.  This will prevent CouchDB from operating in an "Admin Party" mode.</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> COUCHDB_USER=
+      <span class="token punctuation">-</span> COUCHDB_PASSWORD=
+    <span class="token comment" spellcheck="true"># Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,</span>
+    <span class="token comment" spellcheck="true"># for example map it to utilize Fauxton User Interface in dev environments.</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"5984:5984"</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+
+  <span class="token key atrule">peer0.orggo.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb0<span class="token punctuation">:</span><span class="token number">5984</span>
+      <span class="token comment" spellcheck="true"># The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD</span>
+      <span class="token comment" spellcheck="true"># provide the credentials for ledger to connect to CouchDB.  The username and password must</span>
+      <span class="token comment" spellcheck="true"># match the username and password set for the associated CouchDB.</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> couchdb0
+
+  <span class="token key atrule">couchdb1</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> couchdb1
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>couchdb
+    <span class="token comment" spellcheck="true"># Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password</span>
+    <span class="token comment" spellcheck="true"># for CouchDB.  This will prevent CouchDB from operating in an "Admin Party" mode.</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> COUCHDB_USER=
+      <span class="token punctuation">-</span> COUCHDB_PASSWORD=
+    <span class="token comment" spellcheck="true"># Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,</span>
+    <span class="token comment" spellcheck="true"># for example map it to utilize Fauxton User Interface in dev environments.</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"6984:5984"</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+
+  <span class="token key atrule">peer1.orggo.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb1<span class="token punctuation">:</span><span class="token number">5984</span>
+      <span class="token comment" spellcheck="true"># The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD</span>
+      <span class="token comment" spellcheck="true"># provide the credentials for ledger to connect to CouchDB.  The username and password must</span>
+      <span class="token comment" spellcheck="true"># match the username and password set for the associated CouchDB.</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> couchdb1
+
+  <span class="token key atrule">couchdb2</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> couchdb2
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>couchdb
+    <span class="token comment" spellcheck="true"># Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password</span>
+    <span class="token comment" spellcheck="true"># for CouchDB.  This will prevent CouchDB from operating in an "Admin Party" mode.</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> COUCHDB_USER=
+      <span class="token punctuation">-</span> COUCHDB_PASSWORD=
+    <span class="token comment" spellcheck="true"># Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,</span>
+    <span class="token comment" spellcheck="true"># for example map it to utilize Fauxton User Interface in dev environments.</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"7984:5984"</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+
+  <span class="token key atrule">peer0.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb2<span class="token punctuation">:</span><span class="token number">5984</span>
+      <span class="token comment" spellcheck="true"># The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD</span>
+      <span class="token comment" spellcheck="true"># provide the credentials for ledger to connect to CouchDB.  The username and password must</span>
+      <span class="token comment" spellcheck="true"># match the username and password set for the associated CouchDB.</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> couchdb2
+
+  <span class="token key atrule">couchdb3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> couchdb3
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>couchdb
+    <span class="token comment" spellcheck="true"># Populate the COUCHDB_USER and COUCHDB_PASSWORD to set an admin user and password</span>
+    <span class="token comment" spellcheck="true"># for CouchDB.  This will prevent CouchDB from operating in an "Admin Party" mode.</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> COUCHDB_USER=
+      <span class="token punctuation">-</span> COUCHDB_PASSWORD=
+    <span class="token comment" spellcheck="true"># Comment/Uncomment the port mapping if you want to hide/expose the CouchDB service,</span>
+    <span class="token comment" spellcheck="true"># for example map it to utilize Fauxton User Interface in dev environments.</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token string">"8984:5984"</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> byfn
+
+  <span class="token key atrule">peer1.orgcpp.haozai.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_STATEDATABASE=CouchDB
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_COUCHDBADDRESS=couchdb3<span class="token punctuation">:</span><span class="token number">5984</span>
+      <span class="token comment" spellcheck="true"># The CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME and CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD</span>
+      <span class="token comment" spellcheck="true"># provide the credentials for ledger to connect to CouchDB.  The username and password must</span>
+      <span class="token comment" spellcheck="true"># match the username and password set for the associated CouchDB.</span>
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_USERNAME=
+      <span class="token punctuation">-</span> CORE_LEDGER_STATE_COUCHDBCONFIG_PASSWORD=
+    <span class="token key atrule">depends_on</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> couchdb3
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="客户端角色使用的环境变量"><a href="#客户端角色使用的环境变量" class="headerlink" title="客户端角色使用的环境变量"></a>客户端角色使用的环境变量</h2><pre class="line-numbers language-shell"><code class="language-shell">- GOPATH=/opt/gopath	# 官方配置go环境设置的gopath目录
+- CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock	# docker的本地套接字文件, 进程间通信的
+- CORE_LOGGING_LEVEL=INFO	# 客户端容器日志级别, 级别高写的日志越少, 默认是info
+- CORE_PEER_ID=cli	# 客户端节点的名字, 随便起名
+# 这个项是需要设置的 -> 重要
+- CORE_PEER_ADDRESS=peer0.orggo.itcast.com:7051	# 客户端节点要连接的peer节点的地址
+# configtx.yaml -> Organizations -> 对应的组织的组织ID
+- CORE_PEER_LOCALMSPID=OrgGoMSP	# 连接的peer节点所属的组织的组织ID
+- CORE_PEER_TLS_ENABLED=true	# 节点直接通信是否需要加密, true: 加密, false: 不加密
+
+# 证书路径查找方法:
+# crypto-config/peerOrganizations/连接的peer节点属于哪个组织(组织目录)/peers/要节点的peer节点的节点目录/tls
+# tls证书的路径
+- CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.crt
+# 私钥文件
+- CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/server.key
+# ca根证书
+- CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+
+#客户端用户角色，也要有证书。普通用户只能交易
+# 客户端的账号目录, 每个组织都有自己的用户账号
+# crypto-config/peerOrganizations/连接的peer节点属于哪个组织(组织目录)/users/各个用户账号目录/msp
+- CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.itcast.com/users/Admin@org1.example.com/msp
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="orderer节点需要使用的环境变量"><a href="#orderer节点需要使用的环境变量" class="headerlink" title="orderer节点需要使用的环境变量"></a>orderer节点需要使用的环境变量</h2><pre class="line-numbers language-shell"><code class="language-shell"># 日志级别,critical | error | warning | notice | info | debug, 这是从高到底的顺序
+# docker logs 容器名/容器ID
+- ORDERER_GENERAL_LOGLEVEL=INFO		# orderer容器日志级别
+- ORDERER_GENERAL_LISTENADDRESS=0.0.0.0	# orderer容器绑定的地址 === order节点监听的地址
+# 生成创始区块的时候, 数据来源 == file, 数据来自于某一个文件
+- ORDERER_GENERAL_GENESISMETHOD=file
+- ORDERER_GENERAL_GENESISFILE=/var/hyperledger/orderer/orderer.genesis.block
+- ORDERER_GENERAL_LOCALMSPID=OrdererMSP	# 当前orderer节点所属的组的组ID-> configtx.yaml
+# 当前orderer节点的账号目录
+- ORDERER_GENERAL_LOCALMSPDIR=/var/hyperledger/orderer/msp #当前节点的msp账号路径
+- ORDERER_GENERAL_TLS_ENABLED=true	# 通信时候是否需要加密
+- ORDERER_GENERAL_TLS_PRIVATEKEY=/var/hyperledger/orderer/tls/server.key #私钥
+- ORDERER_GENERAL_TLS_CERTIFICATE=/var/hyperledger/orderer/tls/server.crt #证书
+- ORDERER_GENERAL_TLS_ROOTCAS=[/var/hyperledger/orderer/tls/ca.crt] #根证书
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="peer节点需要的环境变量"><a href="#peer节点需要的环境变量" class="headerlink" title="peer节点需要的环境变量"></a>peer节点需要的环境变量</h2><pre class="line-numbers language-shell"><code class="language-shell">- CORE_PEER_ID=peer1.org1.example.com	# peer节点的名字, 随便起名, 不要和其他节点冲突
+- CORE_PEER_ADDRESS=peer1.org1.example.com:7051	# 当前peer节点的地址
+
+# 设置是否被外部节点感知, 值就是当前节点的地址，如果不设置，别的节点就不知道改节点的存在
+- CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.example.com:7051
+
+# 流言->绯闻
+# 数据传播给那个节点, 这个地址是当前组织中的节点的地址, 写自己的地址也可以 ,启动后会使用向改节点发送数据
+- CORE_PEER_GOSSIP_BOOTSTRAP=peer0.org1.example.com:7051
+
+
+- CORE_PEER_LOCALMSPID=Org1MSP	# 当前peer所属的组的组织ID -> configtx.yaml
+
+#docker的本地套接字地址
+- CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+  
+
+# 对应的是docker容器启动之后加入到的网络名字
+# ${COMPOSE_PROJECT_NAME} == 当前配置文件所在的目录的名字
+- CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=${COMPOSE_PROJECT_NAME}_byfn
+
+
+- CORE_LOGGING_LEVEL=INFO	# 日志级别
+- CORE_PEER_TLS_ENABLED=true	# peer通信的时候是否加密
+# 找到当前节点的节点目录/tls/
+- CORE_PEER_TLS_CERT_FILE=/etc/hyperledger/fabric/tls/server.crt	# tls证书
+- CORE_PEER_TLS_KEY_FILE=/etc/hyperledger/fabric/tls/server.key		# 私钥文件
+- CORE_PEER_TLS_ROOTCERT_FILE=/etc/hyperledger/fabric/tls/ca.crt	# ca根证书
+- CORE_PEER_PROFILE_ENABLED=true	# 在peer节点内部又一个profile服务, 默认为true
+
+# 是不是自定选择组织内部的leader节点, true:自动, false:手动
+- CORE_PEER_GOSSIP_USELEADERELECTION=true
+# 当前节点是不是leader节点
+- CORE_PEER_GOSSIP_ORGLEADER=false
+
+# leader节点的选举有两种方式:
+#	- 手动指定
+#		当前指定的leader不能工作, 组织内部就没有可用工作的leader节点了
+#	- 自动指定
+#		当前指定的leader不能工作, 会重新选择一个节点作为leader节点
+        
+# 举例:
+# 自动
+# peer0.orggo
+- CORE_PEER_GOSSIP_USELEADERELECTION=true
+- CORE_PEER_GOSSIP_ORGLEADER=false
+# peer1.orggo
+- CORE_PEER_GOSSIP_USELEADERELECTION=true
+- CORE_PEER_GOSSIP_ORGLEADER=false
+# peer2.orggo
+- CORE_PEER_GOSSIP_USELEADERELECTION=true
+- CORE_PEER_GOSSIP_ORGLEADER=false
+
+# 手动 -> peer1是leader
+# peer0.orggo
+- CORE_PEER_GOSSIP_USELEADERELECTION=false
+- CORE_PEER_GOSSIP_ORGLEADER=false
+# peer1.orggo
+- CORE_PEER_GOSSIP_USELEADERELECTION=false
+- CORE_PEER_GOSSIP_ORGLEADER=true
+# peer2.orggo
+- CORE_PEER_GOSSIP_USELEADERELECTION=false
+- CORE_PEER_GOSSIP_ORGLEADER=false
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="知识复习"><a href="#知识复习" class="headerlink" title="知识复习"></a>知识复习</h2><ol>
+<li><p>客户端通过config.yaml 中配置的域名去访问节点</p>
+</li>
+<li><p>config.yaml 配置文件中包括，组织，用户，用户操作节点</p>
+</li>
+<li><p>通过cryptogen generate –config=crypto-config.yaml 生成证书文件</p>
+</li>
+<li><p>通过configtx.yaml 生成通道文件</p>
+</li>
+<li><p>在configtx.yaml 中配置组织的证书目录</p>
+</li>
+<li><p>在configtx.yaml中，配置锚节点</p>
+</li>
+<li><p>在configtx中配置排序节点</p>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20220304143805230.png" alt="image-20220304143805230"></p>
+</li>
+</ol>
+<p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20220304160410917.png" alt="image-20220304160410917"></p>
+<p>启动结束后：</p>
+<pre><code>CONTAINER ID   IMAGE                               COMMAND             CREATED         STATUS         PORTS                                  NAMES
+74b0dfaf4e30   hyperledger/fabric-tools:latest     "/bin/bash"         2 minutes ago   Up 2 minutes                                          cli
+767e394fe4cb   hyperledger/fabric-orderer:latest   "orderer"           2 minutes ago   Up 2 minutes   0.0.0.0:7050-&gt;7050/tcp                 orderer.haozai.com
+c36ccbe0e43a   hyperledger/fabric-peer:latest      "peer node start"   2 minutes ago   Up 2 minutes   0.0.0.0:8051-8052-&gt;8051-8052/tcp       peer1.orggo.haozai.com
+14194e6ade5a   hyperledger/fabric-peer:latest      "peer node start"   2 minutes ago   Up 2 minutes   0.0.0.0:10051-10052-&gt;10051-10052/tcp   peer1.orgcpp.haozai.com
+3b6a5e4bd7fd   hyperledger/fabric-peer:latest      "peer node start"   2 minutes ago   Up 2 minutes   0.0.0.0:9051-9052-&gt;9051-9052/tcp       peer0.orgcpp.haozai.com
+59cd3ed96c75   hyperledger/fabric-peer:latest      "peer node start"   2 minutes ago   Up 2 minutes   0.0.0.0:7051-7052-&gt;7051-7052/tcp       peer0.orggo.haozai.com
+</code></pre>
+<h2 id="客户端操作各节点"><a href="#客户端操作各节点" class="headerlink" title="客户端操作各节点"></a>客户端操作各节点</h2><ul>
+<li>创建通道<ul>
+<li>进入到客户端对应的容器中</li>
+</ul>
+</li>
+<li>将每个组织的每个节点都加入到通道中 -&gt;  客户端来完成<ul>
+<li>一个客户端同时只能连接一个PEER节点</li>
+</ul>
+</li>
+<li>给每个PEER节点安装智能合约 —&gt; （程序：GO,JAVA）</li>
+<li>对智能合约进行初始化，对应智能合约中init函数<ul>
+<li>只需要在任意节点初始化一次,数据会自动同步</li>
+</ul>
+</li>
+<li>对数据进行查询 —&gt;读</li>
+<li>对数据进行调用 —-&gt;写</li>
+</ul>
+<h3 id="1、创建通道"><a href="#1、创建通道" class="headerlink" title="1、创建通道"></a>1、创建通道</h3><pre class="line-numbers language-shell"><code class="language-shell">#进入cli客户端
+docker exec -it cli /bin/bash  
+
+
+#创建通道文件
+peer channel  create -o orderer节点地址:端口 -c 通道名 -f 通道文件 --tls true --cafile orderer节点pem格式的证书文件
+  #order节点地址可以是 IP或者域名
+  #orderer 节点监听的7050端口
+  #在创建通道文件的时候指明的通道ID
+  #orderPem在cli终端找
+  #orderPem证书文件的路径 : /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/haozai.com/msp/tlscacerts
+peer channel  create -o orderer.haozai.com:7050 -c haozaichannel -f ./channel-artifacts/channel.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/haozai.com/msp/tlscacerts/tlsca.haozai.com-cert.pem
+
+
+
+peer channel  create -o orderer.food.com:7050 -c foodfchannel -f ./channel-artifacts/test.tx --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/msp/tlscacerts/tlsca.food.com-cert.pem
+
+
+
+#成功后，会在当前目录生成*.block文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="2、加入到通道中"><a href="#2、加入到通道中" class="headerlink" title="2、加入到通道中"></a>2、加入到通道中</h3><pre class="line-numbers language-shell"><code class="language-shell">peer channel join -b haozaichannel.block
+
+peer channel list #查看通道信息
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h4 id="切换节点"><a href="#切换节点" class="headerlink" title="切换节点"></a>切换节点</h4><p>只需要修改cli的环境变量</p>
+<pre class="line-numbers language-shell"><code class="language-shell">#切换到peer0.orggo.haozai.com
+ export CORE_PEER_ID=peer0.orggo.haozai.com
+      export CORE_PEER_ADDRESS=peer0.orggo.haozai.com:7051
+      export CORE_PEER_LOCALMSPID=OrgGoMSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer0.orggo.haozai.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/users/Admin@orggo.haozai.com/msp
+     
+
+#切换到peer1.orggo的节点
+    export CORE_PEER_ID=peer1.orggo.haozai.com
+      export CORE_PEER_ADDRESS=peer1.orggo.haozai.com:8051
+      export CORE_PEER_LOCALMSPID=OrgGoMSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer1.orggo.haozai.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer1.orggo.haozai.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/peers/peer1.orggo.haozai.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orggo.haozai.com/users/Admin@orggo.haozai.com/msp
+     
+#切换到peer0.orgcpp的节点
+
+  export CORE_PEER_ID=peer0.orgcpp.haozai.com
+      export CORE_PEER_ADDRESS=peer0.orgcpp.haozai.com:9051
+      export CORE_PEER_LOCALMSPID=OrgCppMSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer0.orgcpp.haozai.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer0.orgcpp.haozai.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer0.orgcpp.haozai.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/users/Admin@orgcpp.haozai.com/msp
+
+#切换到peer1.orgcpp的节点
+       export CORE_PEER_ID=peer1.orgcpp.haozai.com
+      export CORE_PEER_ADDRESS=peer1.orgcpp.haozai.com:10051
+      export CORE_PEER_LOCALMSPID=OrgCppMSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer1.orgcpp.haozai.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer1.orgcpp.haozai.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer1.orgcpp.haozai.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/users/Admin@orgcpp.haozai.com/msp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">#切换到peer0.org1.food.com
+ export CORE_PEER_ID=peer0.org1.food.com
+      export CORE_PEER_ADDRESS=peer0.org1.food.com:7051
+      export CORE_PEER_LOCALMSPID=Org1MSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/peers/peer0.org1.food.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/peers/peer0.org1.food.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/peers/peer0.org1.food.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/users/Admin@org1.food.com/msp
+     
+
+#切换到org2的节点
+    export CORE_PEER_ID=peer0.org2.food.com
+      export CORE_PEER_ADDRESS=peer0.org2.food.com:8051
+      export CORE_PEER_LOCALMSPID=Org2MSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.food.com/peers/peer0.org2.food.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.food.com/peers/peer0.org2.food.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.food.com/peers/peer0.org2.food.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org2.food.com/users/Admin@org2.food.com/msp
+     
+#切换到org3的节点
+
+  export CORE_PEER_ID=peer0.org3.food.com
+      export CORE_PEER_ADDRESS=peer0.org3.food.com:9051
+      export CORE_PEER_LOCALMSPID=Org3MSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.food.com/peers/peer0.org3.food.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.food.com/peers/peer0.org3.food.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.food.com/peers/peer0.org3.food.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org3.food.com/users/Admin@org3.food.com/msp
+
+#切换到org4的节点
+       export CORE_PEER_ID=peer0.org4.food.com
+      export CORE_PEER_ADDRESS=peer0.org4.food.com:10051
+      export CORE_PEER_LOCALMSPID=Org4MSP
+      export CORE_PEER_TLS_CERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org4.food.com/peers/peer0.org4.food.com/tls/server.crt
+     export CORE_PEER_TLS_KEY_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org4.food.com/peers/peer0.org4.food.com/tls/server.key
+     export CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org4.food.com/peers/peer0.org4.food.com/tls/ca.crt
+     export CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org4.food.com/users/Admin@org4.food.com/msp
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3、给节点安装智能合约"><a href="#3、给节点安装智能合约" class="headerlink" title="3、给节点安装智能合约"></a>3、给节点安装智能合约</h3><pre class="line-numbers language-shell"><code class="language-shell">peer chaincode install -n 链码的名字 -v 链码的版本 -l 链码的语言 -p 链码的位置
+
+# 链码的名字自己起
+# 链码的版本 ，自己指定
+
+peer chaincode install -n firstcc -v 1.0 -l golang -p github.com/chaincode/sick
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="3-1-更新锚节点"><a href="#3-1-更新锚节点" class="headerlink" title="3.1 更新锚节点"></a>3.1 更新锚节点</h3><pre class="line-numbers language-shell"><code class="language-shell">peer channel update -o orderer节点地址:端口 -c 通道名 -f 锚节点更新文件 --tls true --cafile orderer节点pem格式证书的文件
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="4、链码的初始化"><a href="#4、链码的初始化" class="headerlink" title="4、链码的初始化"></a>4、链码的初始化</h3><pre class="line-numbers language-shell"><code class="language-shell">peer chaincode instantiate -o orderer节点地址:端口 --tls true --cafile order节点pem格式的证书文件 -C 通道名称 -n 链码名称 -l 链码语言 -v 链码版本 -c 链码Init函数的调用 -p 背书策略
+
+# -n链码名称和 安装的时候-n 的名字要一样
+# -v 链码的版本， 和安装时候的-v 链码版本一致
+# 排序端口7050
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>创建通道的操作只要登录到客户端容器中就可以操作</p>
+<h3 id="5、peer0-OrgGo的操作"><a href="#5、peer0-OrgGo的操作" class="headerlink" title="5、peer0.OrgGo的操作"></a>5、peer0.OrgGo的操作</h3><ul>
+<li>要保证客户端操作的是peer0.OrgGo<ul>
+<li>使用 echo  $CORE_PEER_ADDRESS</li>
+</ul>
+</li>
+<li>将当前的节点加入到通道中<ul>
+<li>peer channel join -b xx.block</li>
+</ul>
+</li>
+<li>安装链码<ul>
+<li>peer chaincode install {flags}</li>
+</ul>
+</li>
+<li>链代码的初始化  — &gt; 只需要做一次<ul>
+<li>peer chaincode instantiate {flag}</li>
+</ul>
+</li>
+<li>查询调用</li>
+</ul>
+<h2 id="智能合约"><a href="#智能合约" class="headerlink" title="智能合约"></a>智能合约</h2><ul>
+<li>链代码的报名的指定</li>
+</ul>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token comment" spellcheck="true">//  xxx.go</span>
+<span class="token keyword">package</span> main 
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>必须引入的包</li>
+</ul>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+   <span class="token comment" spellcheck="true">//客户端需要和Fabric框架通信 "github.com/hyperledger/fabric/core/chaincode/shim		       	 pb  "github.com/hyperledger/fabric/protos/peer"</span>
+    
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li>链码的书写要求</li>
+</ul>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token comment" spellcheck="true">//自定义结构体，类，基于这个实现一些接口函数</span>
+<span class="token keyword">type</span> Test <span class="token keyword">struct</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//空着即可</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">func</span> <span class="token punctuation">(</span>t<span class="token operator">*</span> Test<span class="token punctuation">)</span><span class="token function">Init</span><span class="token punctuation">(</span>stub ChaincodeStubInterface<span class="token punctuation">)</span> pb<span class="token punctuation">.</span>Response
+<span class="token keyword">func</span> <span class="token punctuation">(</span>t<span class="token operator">*</span> Test<span class="token punctuation">)</span><span class="token function">Invoke</span><span class="token punctuation">(</span>stub ChaincodeStubInterface<span class="token punctuation">)</span> pb<span class="token punctuation">.</span>Response
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>shim包的核心方法</p>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token comment" spellcheck="true">//方法定义</span>
+<span class="token keyword">func</span> <span class="token function">Success</span> <span class="token punctuation">(</span>payload <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">)</span> pb<span class="token punctuation">.</span>REsponse<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//实例代码</span>
+<span class="token keyword">func</span> <span class="token punctuation">(</span>t <span class="token operator">*</span>TestStudy<span class="token punctuation">)</span> <span class="token function">Invoke</span><span class="token punctuation">(</span>stub shim<span class="token punctuation">.</span>ChaincodeStubInterface<span class="token punctuation">)</span> pb<span class="token punctuation">.</span>Response<span class="token punctuation">{</span>
+    <span class="token keyword">return</span> shim<span class="token punctuation">.</span><span class="token function">Success</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token function">byte</span> <span class="token punctuation">(</span><span class="token string">"okok"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="fabric-CA-动态注册账号"><a href="#fabric-CA-动态注册账号" class="headerlink" title="fabric CA 动态注册账号"></a>fabric CA 动态注册账号</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20220305122438737.png" alt="image-20220305122438737"></p>
+<p>上图中，Fabric提供了两种方式调用server服务</p>
+<ul>
+<li>通过Fabric-Client调用</li>
+<li>通过SDK调用</li>
+</ul>
+<p>通常一个组织对应一个Fabric-server服务器</p>
+<p>关于fabric-ca的部署</p>
+<ul>
+<li>要在每个组织中部署一个fabric-ca服务器，给当前组织注册新用户</li>
+</ul>
+<pre class="line-numbers language-yaml"><code class="language-yaml"> <span class="token key atrule">ca.example.com</span><span class="token punctuation">:</span>
+    <span class="token key atrule">image</span><span class="token punctuation">:</span> hyperledger/fabric<span class="token punctuation">-</span>ca
+    <span class="token key atrule">environment</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true">#fabric-ca容器中的home目录</span>
+      <span class="token punctuation">-</span> FABRIC_CA_HOME=/etc/hyperledger/fabric<span class="token punctuation">-</span>ca<span class="token punctuation">-</span>server
+      <span class="token comment" spellcheck="true">#fabric-ca服务器的名字，自己起</span>
+      <span class="token punctuation">-</span> FABRIC_CA_SERVER_CA_NAME=ca.example.com
+      <span class="token comment" spellcheck="true">#fabricca服务器证书文件</span>
+      <span class="token punctuation">-</span> FABRIC_CA_SERVER_CA_CERTFILE=/etc/hyperledger/fabric<span class="token punctuation">-</span>ca<span class="token punctuation">-</span>server<span class="token punctuation">-</span>config/ca.org1.example.com<span class="token punctuation">-</span>cert.pem
+      <span class="token comment" spellcheck="true">#私钥文件</span>
+      <span class="token punctuation">-</span> FABRIC_CA_SERVER_CA_KEYFILE=/etc/hyperledger/fabric<span class="token punctuation">-</span>ca<span class="token punctuation">-</span>server<span class="token punctuation">-</span>config/4239aa0dcd76daeeb8ba0cda701851d14504d31aad1b2ddddbac6a57365e497c_sk
+      <span class="token comment" spellcheck="true">#端口，不需要改</span>
+    <span class="token key atrule">ports</span><span class="token punctuation">:</span> 
+      <span class="token punctuation">-</span> <span class="token string">"7054:7054"</span>
+     <span class="token comment" spellcheck="true">#admin:adminpw ==> 账号和密码，登陆后才能注册</span>
+    <span class="token key atrule">command</span><span class="token punctuation">:</span> sh <span class="token punctuation">-</span>c 'fabric<span class="token punctuation">-</span>ca<span class="token punctuation">-</span>server start <span class="token punctuation">-</span>b admin<span class="token punctuation">:</span>adminpw'
+    <span class="token key atrule">volumes</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> ./crypto<span class="token punctuation">-</span>config/peerOrganizations/org1.example.com/ca/<span class="token punctuation">:</span>/etc/hyperledger/fabric<span class="token punctuation">-</span>ca<span class="token punctuation">-</span>server<span class="token punctuation">-</span>config
+      <span class="token comment" spellcheck="true">#容器名</span>
+    <span class="token key atrule">container_name</span><span class="token punctuation">:</span> ca.example.com
+    <span class="token comment" spellcheck="true">#工作网络</span>
+    <span class="token key atrule">networks</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> basic
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h1 id="11"><a href="#11" class="headerlink" title="11"></a>11</h1><pre class="line-numbers language-shell"><code class="language-shell">#进入cli客户端
+docker exec -it cli /bin/bash  
+
+#安装智能合约
+peer chaincode install -n basicinfo -v 1.0 -l golang -p github.com/chaincode/sick
+peer chaincode install -n testFood -v 1.0 -l golang -p github.com/chaincode/test
+peer chaincode install -n recode -v 1.0 -l golang -p github.com/chaincode/recode
+
+peer chaincode install -n testFood -v 3.0 -l golang -p github.com/chaincode/test
+
+#查看peer上的智能合约
+peer chaincode list --installed
+#实例化合约
+peer chaincode instantiate -o orderer.haozai.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/haozai.com/orderers/orderer.haozai.com/msp/tlscacerts/tlsca.haozai.com-cert.pem -C haozaichannel -n basicinfo -v 1.0 -c '{"Args":["init"]}' -P "OR ('Org1MSP.member')"
+
+peer chaincode instantiate -o orderer.haozai.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/haozai.com/orderers/orderer.haozai.com/msp/tlscacerts/tlsca.haozai.com-cert.pem -C haozaichannel -n recodeinfo -v 1.0 -c '{"Args":["init"]}' -P "OR ('OrgCppMSP.member')"
+
+peer chaincode instantiate -o orderer.food.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/orderers/orderer.food.com/msp/tlscacerts/tlsca.food.com-cert.pem -C foodfchannel -n testFood -v 2.0 -c '{"Args":["init"]}' -P "OR ('Org1MSP.member')"
+
+
+#查看合约是否实例化完成
+peer chaincode list --instantiated -C haozaichannel
+
+peer chaincode list --instantiated -C foodfchannel
+
+#触发合约
+peer chaincode invoke -o orderer.haozai.com:7050  -C haozaichannel -n basicinfo  --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/haozai.com/orderers/orderer.haozai.com/msp/tlscacerts/tlsca.haozai.com-cert.pem --peerAddresses peer1.orgcpp.haozai.com:10051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer0.orgcpp.haozai.com/tls/ca.crt -c '{"Args":["save","110115","{\"name\":\"zhangsan\",\"identity\":\"110114\",\"mobile\":\"18910012222\"}"]}'
+
+
+#查询数据是否写入区块
+peer chaincode query -C haozaichannel -n basicinfo -c '{"Args":["query","110115"]}'
+
+
+
+#查询
+peer chaincode invoke -o orderer.food.com:7050  -C foodfchannel -n testFood  --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/orderers/orderer.food.com/msp/tlscacerts/tlsca.food.com-cert.pem --peerAddresses peer0.org1.food.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/peers/peer0.org1.food.com/tls/ca.crt -c '{"Args":["commdityAdd","1","{\"ID\":\"1\",\"CommodityName\":\"test\",\"CommodityProduceTime\":\"2022-10-20\",\"SaveTime\":\"30天\",\"CommodityFactory\":\"AB\",\"CommodityAd\":\"北京\",\"TransT\":\"2000-10-02\",\"TransName\":\"菜鸟\",\"TransPeople\":\"xiaoming\",\"TransTime\":\"3天\",\"SoldAd\":\"铜陵\",\"SoldMarket\":\"大嘻嘻嘻\"，\"SoldPrice\":\"30\"}"]}'
+
+
+
+peer chaincode invoke -o orderer.food.com:7050  -C foodfchannel -n testFood  --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/orderers/orderer.food.com/msp/tlscacerts/tlsca.food.com-cert.pem --peerAddresses peer0.org1.food.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/peers/peer0.org1.food.com/tls/ca.crt -c '{"Args":["commdityAdd","1","{\"ID\":\"1\",\"CommodityName\":\"test\",\"CommodityProduceTime\":\"2022-10-20\",\"SaveTime\":\"30天\",\"CommodityFactory\":\"AB\",\"CommodityAd\":\"北京\",\"TransT\":\"2000-10-02\",\"TransName\":\"菜鸟\",\"TransPeople\":\"xiaoming\",\"TransTime\":\"3天\",\"SoldAd\":\"铜陵\",\"SoldMarket\":\"大嘻嘻嘻\,\"SoldPrice\":\"30\"}"]}'
+
+
+
+peer chaincode invoke -o orderer.food.com:7050  -C foodfchannel -n testFood  --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/orderers/orderer.food.com/msp/tlscacerts/tlsca.food.com-cert.pem --peerAddresses peer0.org1.food.com:7051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/org1.food.com/peers/peer0.org1.food.com/tls/ca.crt -c '{"Args":["commdityAdd","5","{\"id\":\"5\",\"commodityName\":\"SDKtest\",\"commodityProduceTime\":\"2022-10-20\",\"saveTime\":\"30天\",\"commodityFactory\":\"JavaSDK\",\"commodityAd\":\"北京SDK\",\"transT\":\"2000-10-02\",\"transName\":\"菜鸟\",\"transPeople\":\"xiaoming\",\"transTime\":\"100000\",\"soldAd\":\"铜陵\",\"soldMarket\":\"大嘻嘻嘻\",\"soldPrice\":\"30\"}"]}'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>查看链上的数据</p>
+<p>​	查看区块长度</p>
+<p>​	peer channel getinfo -c haozaichannel</p>
+<p>peer channel   fetch newest channel-artifacts/new.pb -c haozaichannel  </p>
+<pre class="line-numbers language-shell"><code class="language-shell">#安装合约
+peer chaincode install -n recodeinfo -v 4.0 -l golang -p github.com/chaincode/recode
+peer chaincode install -n testFood -v 4.0 -l golang -p github.com/chaincode/test
+
+#合约升级
+peer chaincode upgrade -o orderer.food.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/orderers/orderer.food.com/msp/tlscacerts/tlsca.food.com-cert.pem -C foodfchannel -n testFood -v 4.0 -c '{"Args":["init"]}' -P "OR ('Org1MSP.member')"
+
+peer chaincode upgrade -o orderer.food.com:7050 --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/food.com/orderers/orderer.food.com/msp/tlscacerts/tlsca.food.com-cert.pem -C foodfchannel -n injectRecode -v 3.0 -c '{"Args":["init"]}' -P "OR ('Org1MSP.member')"
+
+
+#触发合约
+peer chaincode invoke -o orderer.haozai.com:7050  -C haozaichannel -n recodeinfo  --tls true --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/haozai.com/orderers/orderer.haozai.com/msp/tlscacerts/tlsca.haozai.com-cert.pem --peerAddresses peer1.orgcpp.haozai.com:10051 --tlsRootCertFiles /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/peerOrganizations/orgcpp.haozai.com/peers/peer1.orgcpp.haozai.com/tls/ca.crt -c '{"Args":["save","110115","{\"sickName\":\"gm\",\"identity\":\"110114\",\"drugName\":[\"888\"]}"]}'
+
+
+
+#查询
+peer chaincode query -C haozaichannel -n recodeinfo -c '{"Args":["queryhistory","110115"]}'
+
+peer chaincode query -C foodfchannel -n injectRecode -c '{"Args":["queryInfoById","ea48576f30be1669971699c09ad05c94"]}'
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p><img src="https://hexo-images1.oss-cn-beijing.aliyuncs.com/imgs/image-20220306163551595.png" alt="image-20220306163551595"></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">jackliu</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://jackliu-hao.github.io/2022/02/26/hyperledger%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">https://jackliu-hao.github.io/2022/02/26/hyperledger%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">jackliu</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                                    <span class="chip bg-color">区块链</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2022/12/25/PythonWEB%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="PythonWEB课程设计">
+                        
+                        <span class="card-title">PythonWEB课程设计</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用Django框架，做的留言板。简单应用
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-12-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/" class="post-category">
+                                    代码审计
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">编程</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/01/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="计算机组成原理">
+                        
+                        <span class="card-title">计算机组成原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            假期学习的计算机组成原理，记下笔记。课程来自王道考研。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-01-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            jackliu
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2023</span>
+            
+            <a href="/about" target="_blank">Jackliu</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+                &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                        class="white-color">33.3k</span>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:965104748@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=965104748" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 965104748" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+     
+        <script type="text/javascript">
+            // 只在桌面版网页启用特效
+            var windowWidth = $(window).width();
+            if (windowWidth > 768) {
+                document.write('<script type="text/javascript" src="/libs/others/snow.js"><\/script>');
+            }
+        </script>
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+<script type="text/javascript">
+    var OriginTitile=document.title,st;
+    document.addEventListener("visibilitychange",function(){
+        document.hidden?(document.title="ヽ(●-`Д´-)ノ快回来丫",clearTimeout(st)):(document.title="(Ő∀Ő3)ノ不错哦！",st=setTimeout(function(){document.title=OriginTitile},3e3))
+    })
+</script>
+
+</html>
