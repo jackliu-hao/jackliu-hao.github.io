@@ -4,31 +4,6 @@
   
     
     <entry>
-      <title>SQL注入总结篇</title>
-      <link href="/2023/01/20/SQL%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93%E7%AF%87/"/>
-      <url>/2023/01/20/SQL%E6%B3%A8%E5%85%A5%E6%80%BB%E7%BB%93%E7%AF%87/</url>
-      
-        <content type="html"><![CDATA[<pre class="line-numbers language-text"><code class="language-text">{% pdf /pdf/SQL注入.pdf %}<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
-      
-      
-      <categories>
-          
-          <category> WEB安全 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> sql注入 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>PHP代码审计</title>
       <link href="/2022/12/25/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/"/>
       <url>/2022/12/25/PHP%E4%BB%A3%E7%A0%81%E5%AE%A1%E8%AE%A1/</url>
